@@ -624,14 +624,14 @@ img_tcas_arrow_dn_amber18 =			img_add("img_tcas_arrow_dn_amber.png", -100, -100,
 img_tcas_arrow_dn_amber19 =			img_add("img_tcas_arrow_dn_amber.png", -100, -100, 16.347, 28.773)						visible(img_tcas_arrow_dn_amber19,false)
 
 
-
 img_triangle =						img_add("img_triangle.png", 374.5, 639, 50, 61)							visible(img_triangle,false)
 img_tfc_ring =						img_add("img_tfc_ring.png", 352.500, 593.861, 95, 95)					visible(img_tfc_ring,false)
---img_compass_rose_no_text =			img_add("img_compass_rose_no_text.png", -162.500, 78.86, 1125, 1125)	visible(img_compass_rose_no_text,false)
-img_compass_rose_no_text =			img_add("test.png", -162.500, 78.86, 1125, 1125)	visible(img_compass_rose_no_text,false)
+img_compass_rose_no_text =			img_add("img_compass_rose_no_text.png", -162.500, 78.86, 1125, 1125)	visible(img_compass_rose_no_text,false)
+--img_compass_rose_no_text =			img_add("test.png", -162.500, 78.86, 1125, 1125)	visible(img_compass_rose_no_text,false)
 img_compass_text =					img_add("img_compass_text.png", -162.500, 78.86, 1125, 1125)			visible(img_compass_text,false)
 
-img_top_mask =						img_add("img_top_mask.png", 0, 0, 800, 800)								visible(img_top_mask,false)
+img_top_mask =						img_add("img_top_mask.png", 0, 0, 800, 800)								visible(img_top_mask,false) -- mask for the top
+
 -- stuff that needs to go above the top mask
 txt_gs =							txt_add("GS", "size:20px; font:my737glass.otf; color:white; halign:left;", 5, 10, 30, 50) visible(txt_gs,false)
 txt_gs_value =						txt_add(" ", "size:28px; font:my737glass.otf; color:white; halign:left;", 30, 2, 60, 31) visible(txt_gs_value,false)
@@ -649,7 +649,7 @@ img_track_box =						img_add("img_track_box.png", 350, 0, 100, 78.756)				visibl
 img_magenta_hdg_bug =				img_add("img_magenta_hdg_bug.png", 382.5, 60.29, 35, 1161.143)			visible(img_magenta_hdg_bug,false)
 img_magenta_line =					img_add("img_magenta_line.png", 398.500, 77.862, 3, 1127)				visible(img_magenta_line,false)
 img_range_markers =					img_add("img_range_markers.png", 390.972, 219.15, 18.057, 280.900)		visible(img_range_markers,false)
--- stuff that needs to go above the top mask
+
 
 --failure flags
 map_failure_flag_box = canvas_add(0, 0, 800, 800, function()
@@ -661,69 +661,72 @@ hdg_failure_flag_box = canvas_add(0, 0, 800, 800, function()
 	_rect(374, 10, 52, 34)
 	_stroke("#FF7F2A", 3)
 end)visible(hdg_failure_flag_box,false)
-
 txt_hdg_failure_flag =				txt_add("HDG", "size:22px; font:my737glass.otf; color: #FF7F2A; halign:center;", 350, 14, 100, 50) visible(txt_hdg_failure_flag,false)
 txt_map_failure_flag =				txt_add("MAP", "size:22px; font:my737glass.otf; color: #FF7F2A; halign:center;", 350, 460, 100, 50) visible(txt_map_failure_flag,false)
-
-wind_speed_direction = group_add(txt_wind_heading, txt_wind_speed, img_wind_arrow)
 
 canvas_efis_range = canvas_add(342, 325, 50, 26, function()
 	_fill("black")
 end)visible(canvas_efis_range,false)
 
-canvas_vor1 = canvas_add(0, 680 , 120, 120, function()
+canvas_vor1 = canvas_add(0, 680 , 120, 120, function() --created a black box bottom left corner behind VOR1 etc
 	_fill("black")
 end)visible(canvas_vor1,true)
 
-canvas_vor2 = canvas_add(680, 680 , 120, 120, function()
+canvas_vor2 = canvas_add(680, 680 , 120, 120, function() --created a black box bottom left corner behind VOR2 etc
 	_fill("black")
 end)visible(canvas_vor2,true)
 
-txt_vor_1 =							txt_add("VOR 1", "size:24px; font:my737glass.otf; color:lime; halign:left;", 5, 690, 500, 24) visible(txt_vor_1,false)
+txt_vor_1 =							txt_add("VOR 1", "size:24px; font:my737glass.otf; color:lime; halign:left;", 5, 690, 500, 24) 	visible(txt_vor_1,false)
 txt_vor_2 =							txt_add("VOR 2", "size:24px; font:my737glass.otf; color:lime; halign:left;", 695, 690, 100, 24) visible(txt_vor_2,false)
+txt_efis_range =					txt_add(" ", "size:22px; font:my737glass.otf; color:white; halign:right;", 342, 325, 50, 26) 	visible(txt_efis_range,false)
+txt_fpln_nav =						txt_add(" ", "size:24px; font:my737glass.otf; color:magenta; halign:left;", 680, 0, 120, 50) 	visible(txt_fpln_nav,false)
+txt_id_eta =						txt_add(" ", "size:22px; font:my737glass.otf; color:white; halign:right;", 650, 28, 80, 50) 	visible(txt_id_eta,false)
+txt_id_eta_small =					txt_add("Z", "size:16px; font:my737glass.otf; color:white; halign:left;", 730, 34, 120, 50) 	visible(txt_id_eta_small,false)
+txt_lnav_dist_next =				txt_add(" ", "size:22px; font:my737glass.otf; color:white; halign:right;", 650, 54, 80, 50) 	visible(txt_lnav_dist_next,false)
+txt_lnav_dist_next_small =			txt_add("NM", "size:18px; font:my737glass.otf; color:white; halign:left;", 730, 58, 40, 50) 	visible(txt_lnav_dist_next_small,false)
 
-txt_efis_range =					txt_add(" ", "size:26px; font:my737glass.otf; color:white; halign:right;", 342, 325, 50, 26) visible(txt_efis_range,false)
+--groups
+wind_speed_direction = group_add(txt_wind_heading, txt_wind_speed, img_wind_arrow)
 
-txt_fpln_nav =						txt_add(" ", "size:24px; font:my737glass.otf; color:magenta; halign:left;", 680, 0, 120, 50) visible(txt_fpln_nav,false)
-txt_id_eta =						txt_add(" ", "size:22px; font:my737glass.otf; color:white; halign:right;", 650, 28, 80, 50) visible(txt_id_eta,false)
-txt_id_eta_small =					txt_add("Z", "size:16px; font:my737glass.otf; color:white; halign:left;", 730, 34, 120, 50) visible(txt_id_eta_small,false)
-txt_lnav_dist_next =				txt_add(" ", "size:22px; font:my737glass.otf; color:white; halign:right;", 650, 54, 80, 50) visible(txt_lnav_dist_next,false)
-txt_lnav_dist_next_small =			txt_add("NM", "size:18px; font:my737glass.otf; color:white; halign:left;", 730, 58, 40, 50) visible(txt_lnav_dist_next_small,false)
+
 
 cyan_lines = canvas_add(0, 0, 800, 800)
 
-black_bg_no_power = canvas_add(0, 0, 800, 800, function()
+black_bg_no_power = canvas_add(0, 0, 800, 800, function() --black canvas over everything to simulate displays that are off
 	_fill("black")
-end) -- blackout if no power
+end)
 
-function nd_images (nd_mode, irs_mode, wind_heading, wind_speed, irs_mode, hdg_bug_line, current_track, true_airspeed, groundspeed) -- 0 = app, 1 = vor, 2 = map, 3 = pln
-	visible(img_triangle,					nd_mode == 0 or nd_mode == 1 or nd_mode == 2)
-	visible(img_compass_rose_no_text,		nd_mode == 0 or nd_mode == 1 or nd_mode == 2)
-	visible(img_top_mask,					nd_mode == 0 or nd_mode == 1 or nd_mode == 2)
-	visible(img_track_line,					(nd_mode == 0 or nd_mode == 1 or nd_mode == 2) and irs_mode == 2)
-	visible(img_range_markers,				nd_mode == 0 or nd_mode == 1 or nd_mode == 2)
-	visible(img_track_box,					nd_mode == 2)
-	visible(img_compass_text,				(nd_mode == 0 or nd_mode == 1 or nd_mode == 2) and irs_mode == 2)
-	visible(img_magenta_hdg_bug,			(nd_mode == 0 or nd_mode == 1 or nd_mode == 2) and irs_mode == 2)
-	visible(img_magenta_line,				(nd_mode == 0 or nd_mode == 1 or nd_mode == 2) and (hdg_bug_line == 1 and irs_mode == 2))
-	visible(img_current_hdg_bug,			(nd_mode == 0 or nd_mode == 1 or nd_mode == 2) and irs_mode == 2)
+function nd_images (nd_mode, irs_mode, wind_heading, wind_speed, irs_mode, hdg_bug_line, current_track, true_airspeed, groundspeed) 
+	visible(img_triangle,					nd_mode ~= 3) --Airplane symbol (W) MAP, MAP CTR,VOR,APP 
+	visible(img_compass_rose_no_text,		nd_mode ~= 3) --Expanded compass (W)
+	visible(img_top_mask,					nd_mode ~= 3)
+	visible(img_track_line,					nd_mode ~= 3 and irs_mode == 2) --MAP,MAP CTR,VOR,VOR CTR,APP,APP CTR
+	visible(img_range_markers,				nd_mode ~= 3) 
+	visible(txt_efis_range,					nd_mode == 2) --Number indicates range (VOR CTR and APP CTR do not display range).
+	visible(canvas_efis_range,				nd_mode == 2)
+	visible(img_track_box,					nd_mode == 2 and irs_mode == 2) --Shows track in MAP, MAP CTR.
+	visible(txt_trk_hdg_mag_green,			nd_mode ~= 3 and irs_mode == 2) -- MAG or TRU as the heading reference (TRU still needs to be done)
+	visible(img_compass_text,				nd_mode ~= 3 and irs_mode == 2)
+	visible(img_magenta_hdg_bug,			nd_mode ~= 3 and irs_mode == 2) --All except PLAN
+	visible(img_magenta_line,				nd_mode ~= 3 and hdg_bug_line == 1 and irs_mode == 2)
+	visible(img_current_hdg_bug,			nd_mode == 2 and irs_mode == 2)
 	visible(txt_trk_hdg,					nd_mode == 2 and irs_mode == 2)
 	visible(txt_gs,							irs_mode == 2)
 	visible(txt_tas,						irs_mode == 2)
-	visible(txt_trk_hdg_mag_green,			irs_mode == 2)
 	visible(txt_vor_1,						irs_mode == 2)
 	visible(txt_vor_2,						irs_mode == 2)
 	visible(txt_hdg_failure_flag,			irs_mode ~= 2)
 	visible(txt_map_failure_flag,			irs_mode ~= 2)
-	visible(hdg_failure_flag_box,			irs_mode ~= 2)
-	visible(map_failure_flag_box,			irs_mode ~= 2)
+	visible(hdg_failure_flag_box,			irs_mode ~= 2) -- could use more logic instead of just going away when irs is aligned
+	visible(map_failure_flag_box,			irs_mode ~= 2) -- could use more logic instead of just going away when irs is aligned
 	
 	
-	if nd_mode == 2 then
-		txt_set(txt_trk_hdg_green, "TRK")
+	if nd_mode == 2 then 
+		txt_set(txt_trk_hdg_green, "TRK") --Shows track in MAP, MAP CTR.
 	else
-		txt_set(txt_trk_hdg_green, "HDG")
+		txt_set(txt_trk_hdg_green, "HDG") --Shows HDG (heading) in VOR,	VOR CTR, APP, APP CTR
 	end
+	visible(txt_trk_hdg_green,				nd_mode ~= 3 and irs_mode == 2)
 	
 	local tas = var_round(true_airspeed * 1.94384)
 	
@@ -732,22 +735,18 @@ function nd_images (nd_mode, irs_mode, wind_heading, wind_speed, irs_mode, hdg_b
 	
 	img_rotate(img_wind_arrow, (wind_heading - current_track) - 180)
 	
-	if tas < 101 then
+	if tas < 101 then --Current true airspeed displayed above 100 knots
 		txt_set(txt_tas_value, "---")
 	else
 		txt_set(txt_tas_value, tas)
 	end
-	visible(txt_tas_value,					irs_mode == 2)
+	
 	txt_set(txt_gs_value, string.format("%3s", var_round(groundspeed)))
+	visible(txt_tas_value,					irs_mode == 2)
 	visible(txt_gs_value,					irs_mode == 2)
-	
-	visible(txt_trk_hdg_green,				nd_mode == 0 or nd_mode == 1 or nd_mode == 2 and irs_mode == 2)
-	visible(txt_efis_range,					nd_mode == 2)
-	visible(canvas_efis_range,				nd_mode == 2)
-	
-	visible(wind_speed_direction,			tas > 101 and irs_mode == 2)
+	visible(wind_speed_direction,			tas > 101 and irs_mode == 2) --  Blank until TAS is greater than 101 knots. --still need to do : PLAN mode displays speed/direction only.
 end
-xpl_dataref_subscribe("laminar/B738/EFIS_control/capt/map_mode_pos", "INT",
+xpl_dataref_subscribe("laminar/B738/EFIS_control/capt/map_mode_pos", "INT", --no_mode, 0 app, 1 vor, 2 map, 3 pln
 					  "laminar/B738/irs/irs_mode", "INT",
 					  "sim/cockpit2/gauges/indicators/wind_heading_deg_mag", "FLOAT",
 					  "sim/cockpit2/gauges/indicators/wind_speed_kts", "FLOAT",
@@ -1161,8 +1160,6 @@ function tcas_show(tcas_on,tcas_show,tcas_show1,alt_dn_show,alt_up_show,arrow_dn
 	
 	local my_x = 400 - (21 / 2)
 	local my_y = 641.36 - (21 / 2)
-	--local my_x = 400 - (21 / 2)
-	--local my_y = 641.36 - (21 / 2)
 	
 	--white
 	visible(img_tcas_diamond,				tcas_on == 1 and tcas_show  == 1  and tcas_show1 == 1 and diamond_show == 1)
@@ -1262,9 +1259,7 @@ function tcas_show2(tcas_on,tcas_show,tcas_show2,alt_dn_show2,alt_up_show2,arrow
 	
 	local my_x = 400 - (21 / 2)
 	local my_y = 641.36 - (21 / 2)
-	--local my_x = 400 - (21 / 2)
-	--local my_y = 641.36 - (21 / 2)
-	
+
 	--white2
 	visible(img_tcas_diamond2,				tcas_on == 1 and tcas_show  == 1  and tcas_show2 == 1 and diamond_show2 == 1)
 	visible(img_tcas_diamond_e2,			tcas_on == 1 and tcas_show  == 1  and tcas_show2 == 1 and diamond_e_show2 == 1)
@@ -1363,8 +1358,6 @@ function tcas_show3(tcas_on,tcas_show,tcas_show3,alt_dn_show3,alt_up_show3,arrow
 	
 	local my_x = 400 - (21 / 2)
 	local my_y = 641.36 - (21 / 2)
-	--local my_x = 400 - (21 / 2)
-	--local my_y = 641.36 - (21 / 2)
 	
 	--white3
 	visible(img_tcas_diamond3,				tcas_on == 1 and tcas_show  == 1 and tcas_show3 == 1 and diamond_show3 == 1)
@@ -1463,8 +1456,6 @@ function tcas_show4(tcas_on,tcas_show,tcas_show4,alt_dn_show4,alt_up_show4,arrow
 	
 	local my_x = 400 - (21 / 2)
 	local my_y = 641.36 - (21 / 2)
-	--local my_x = 400 - (21 / 2)
-	--local my_y = 641.36 - (21 / 2)
 	
 	--white4
 	visible(img_tcas_diamond4,				tcas_on == 1 and tcas_show  == 1 and tcas_show4 == 1 and diamond_show4 == 1)
@@ -1560,10 +1551,10 @@ function tcas_show5(tcas_on,tcas_show,tcas_show5,alt_dn_show5,alt_up_show5,arrow
   txt_set(txt_tcas_alta_b5, alt5)
   txt_set(txt_tcas_altr_t5, alt5)
   txt_set(txt_tcas_altr_b5, alt5)
+  
   local my_x = 400 - (21 / 2)
   local my_y = 641.36 - (21 / 2)
-  --local my_x = 400 - (21 / 2)
-  --local my_y = 641.36 - (21 / 2)
+  
 --white5
   visible(img_tcas_diamond5, tcas_on == 1 and tcas_show  == 1  and tcas_show5 == 1 and diamond_show5 == 1)
   visible(img_tcas_diamond_e5, tcas_on == 1 and tcas_show  == 1  and tcas_show5 == 1 and diamond_e_show5 == 1)
@@ -1653,10 +1644,10 @@ function tcas_show6(tcas_on,tcas_show,tcas_show6,alt_dn_show6,alt_up_show6,arrow
   txt_set(txt_tcas_alta_b6, alt6)
   txt_set(txt_tcas_altr_t6, alt6)
   txt_set(txt_tcas_altr_b6, alt6)
+  
   local my_x = 400 - (21 / 2)
   local my_y = 641.36 - (21 / 2)
-  --local my_x = 400 - (21 / 2)
-  --local my_y = 641.36 - (21 / 2)
+  
 --white6
   visible(img_tcas_diamond6, tcas_on == 1 and tcas_show  == 1  and tcas_show6 == 1 and diamond_show6 == 1)
   visible(img_tcas_diamond_e6, tcas_on == 1 and tcas_show  == 1  and tcas_show6 == 1 and diamond_e_show6 == 1)
@@ -1746,10 +1737,10 @@ function tcas_show7(tcas_on,tcas_show,tcas_show7,alt_dn_show7,alt_up_show7,arrow
   txt_set(txt_tcas_alta_b7, alt7)
   txt_set(txt_tcas_altr_t7, alt7)
   txt_set(txt_tcas_altr_b7, alt7)
+  
   local my_x = 400 - (21 / 2)
   local my_y = 641.36 - (21 / 2)
-  --local my_x = 400 - (21 / 2)
-  --local my_y = 641.36 - (21 / 2)
+  
 --white7
   visible(img_tcas_diamond7, tcas_on == 1 and tcas_show  == 1  and tcas_show7 == 1 and diamond_show7 == 1)
   visible(img_tcas_diamond_e7, tcas_on == 1 and tcas_show  == 1  and tcas_show7 == 1 and diamond_e_show7 == 1)
@@ -1839,10 +1830,10 @@ function tcas_show8(tcas_on,tcas_show,tcas_show8,alt_dn_show8,alt_up_show8,arrow
   txt_set(txt_tcas_alta_b8, alt8)
   txt_set(txt_tcas_altr_t8, alt8)
   txt_set(txt_tcas_altr_b8, alt8)
+  
   local my_x = 400 - (21 / 2)
   local my_y = 641.36 - (21 / 2)
-  --local my_x = 400 - (21 / 2)
-  --local my_y = 641.36 - (21 / 2)
+  
 --white8
   visible(img_tcas_diamond8, tcas_on == 1 and tcas_show  == 1  and tcas_show8 == 1 and diamond_show8 == 1)
   visible(img_tcas_diamond_e8, tcas_on == 1 and tcas_show  == 1  and tcas_show8 == 1 and diamond_e_show8 == 1)
@@ -1932,10 +1923,10 @@ function tcas_show9(tcas_on,tcas_show,tcas_show9,alt_dn_show9,alt_up_show9,arrow
   txt_set(txt_tcas_alta_b9, alt9)
   txt_set(txt_tcas_altr_t9, alt9)
   txt_set(txt_tcas_altr_b9, alt9)
+  
   local my_x = 400 - (21 / 2)
   local my_y = 641.36 - (21 / 2)
-  --local my_x = 400 - (21 / 2)
-  --local my_y = 641.36 - (21 / 2)
+  
 --white9
   visible(img_tcas_diamond9, tcas_on == 1 and tcas_show  == 1  and tcas_show9 == 1 and diamond_show9 == 1)
   visible(img_tcas_diamond_e9, tcas_on == 1 and tcas_show  == 1  and tcas_show9 == 1 and diamond_e_show9 == 1)
@@ -2025,10 +2016,10 @@ function tcas_show10(tcas_on,tcas_show,tcas_show10,alt_dn_show10,alt_up_show10,a
   txt_set(txt_tcas_alta_b10, alt10)
   txt_set(txt_tcas_altr_t10, alt10)
   txt_set(txt_tcas_altr_b10, alt10)
+  
   local my_x = 400 - (21 / 2)
   local my_y = 641.36 - (21 / 2)
-  --local my_x = 400 - (21 / 2)
-  --local my_y = 641.36 - (21 / 2)
+  
 --white10
   visible(img_tcas_diamond10, tcas_on == 1 and tcas_show  == 1  and tcas_show10 == 1 and diamond_show10 == 1)
   visible(img_tcas_diamond_e10, tcas_on == 1 and tcas_show  == 1  and tcas_show10 == 1 and diamond_e_show10 == 1)
@@ -2118,10 +2109,10 @@ function tcas_show11(tcas_on,tcas_show,tcas_show11,alt_dn_show11,alt_up_show11,a
   txt_set(txt_tcas_alta_b11, alt11)
   txt_set(txt_tcas_altr_t11, alt11)
   txt_set(txt_tcas_altr_b11, alt11)
+  
   local my_x = 400 - (21 / 2)
   local my_y = 641.36 - (21 / 2)
-  --local my_x = 400 - (21 / 2)
-  --local my_y = 641.36 - (21 / 2)
+  
 --white11
   visible(img_tcas_diamond11, tcas_on == 1 and tcas_show  == 1  and tcas_show11 == 1 and diamond_show11 == 1)
   visible(img_tcas_diamond_e11, tcas_on == 1 and tcas_show  == 1  and tcas_show11 == 1 and diamond_e_show11 == 1)
@@ -2211,10 +2202,10 @@ function tcas_show12(tcas_on,tcas_show,tcas_show12,alt_dn_show12,alt_up_show12,a
   txt_set(txt_tcas_alta_b12, alt12)
   txt_set(txt_tcas_altr_t12, alt12)
   txt_set(txt_tcas_altr_b12, alt12)
+  
   local my_x = 400 - (21 / 2)
   local my_y = 641.36 - (21 / 2)
-  --local my_x = 400 - (21 / 2)
-  --local my_y = 641.36 - (21 / 2)
+  
 --white12
   visible(img_tcas_diamond12, tcas_on == 1 and tcas_show  == 1  and tcas_show12 == 1 and diamond_show12 == 1)
   visible(img_tcas_diamond_e12, tcas_on == 1 and tcas_show  == 1  and tcas_show12 == 1 and diamond_e_show12 == 1)
@@ -2304,10 +2295,10 @@ function tcas_show13(tcas_on,tcas_show,tcas_show13,alt_dn_show13,alt_up_show13,a
   txt_set(txt_tcas_alta_b13, alt13)
   txt_set(txt_tcas_altr_t13, alt13)
   txt_set(txt_tcas_altr_b13, alt13)
+  
   local my_x = 400 - (21 / 2)
   local my_y = 641.36 - (21 / 2)
-  --local my_x = 400 - (21 / 2)
-  --local my_y = 641.36 - (21 / 2)
+  
 --white13
   visible(img_tcas_diamond13, tcas_on == 1 and tcas_show  == 1  and tcas_show13 == 1 and diamond_show13 == 1)
   visible(img_tcas_diamond_e13, tcas_on == 1 and tcas_show  == 1  and tcas_show13 == 1 and diamond_e_show13 == 1)
@@ -2397,10 +2388,10 @@ function tcas_show14(tcas_on,tcas_show,tcas_show14,alt_dn_show14,alt_up_show14,a
   txt_set(txt_tcas_alta_b14, alt14)
   txt_set(txt_tcas_altr_t14, alt14)
   txt_set(txt_tcas_altr_b14, alt14)
+  
   local my_x = 400 - (21 / 2)
   local my_y = 641.36 - (21 / 2)
-  --local my_x = 400 - (21 / 2)
-  --local my_y = 641.36 - (21 / 2)
+  
 --white14
   visible(img_tcas_diamond14, tcas_on == 1 and tcas_show  == 1  and tcas_show14 == 1 and diamond_show14 == 1)
   visible(img_tcas_diamond_e14, tcas_on == 1 and tcas_show  == 1  and tcas_show14 == 1 and diamond_e_show14 == 1)
@@ -2490,10 +2481,10 @@ function tcas_show15(tcas_on,tcas_show,tcas_show15,alt_dn_show15,alt_up_show15,a
   txt_set(txt_tcas_alta_b15, alt15)
   txt_set(txt_tcas_altr_t15, alt15)
   txt_set(txt_tcas_altr_b15, alt15)
+  
   local my_x = 400 - (21 / 2)
   local my_y = 641.36 - (21 / 2)
-  --local my_x = 400 - (21 / 2)
-  --local my_y = 641.36 - (21 / 2)
+  
 --white15
   visible(img_tcas_diamond15, tcas_on == 1 and tcas_show  == 1  and tcas_show15 == 1 and diamond_show15 == 1)
   visible(img_tcas_diamond_e15, tcas_on == 1 and tcas_show  == 1  and tcas_show15 == 1 and diamond_e_show15 == 1)
@@ -2583,10 +2574,10 @@ function tcas_show16(tcas_on,tcas_show,tcas_show16,alt_dn_show16,alt_up_show16,a
   txt_set(txt_tcas_alta_b16, alt16)
   txt_set(txt_tcas_altr_t16, alt16)
   txt_set(txt_tcas_altr_b16, alt16)
+  
   local my_x = 400 - (21 / 2)
   local my_y = 641.36 - (21 / 2)
-  --local my_x = 400 - (21 / 2)
-  --local my_y = 641.36 - (21 / 2)
+  
 --white16
   visible(img_tcas_diamond16, tcas_on == 1 and tcas_show  == 1  and tcas_show16 == 1 and diamond_show16 == 1)
   visible(img_tcas_diamond_e16, tcas_on == 1 and tcas_show  == 1  and tcas_show16 == 1 and diamond_e_show16 == 1)
@@ -2676,10 +2667,10 @@ function tcas_show17(tcas_on,tcas_show,tcas_show17,alt_dn_show17,alt_up_show17,a
   txt_set(txt_tcas_alta_b17, alt17)
   txt_set(txt_tcas_altr_t17, alt17)
   txt_set(txt_tcas_altr_b17, alt17)
+  
   local my_x = 400 - (21 / 2)
   local my_y = 641.36 - (21 / 2)
-  --local my_x = 400 - (21 / 2)
-  --local my_y = 641.36 - (21 / 2)
+  
 --white17
   visible(img_tcas_diamond17, tcas_on == 1 and tcas_show  == 1  and tcas_show17 == 1 and diamond_show17 == 1)
   visible(img_tcas_diamond_e17, tcas_on == 1 and tcas_show  == 1  and tcas_show17 == 1 and diamond_e_show17 == 1)
@@ -2769,10 +2760,10 @@ function tcas_show18(tcas_on,tcas_show,tcas_show18,alt_dn_show18,alt_up_show18,a
   txt_set(txt_tcas_alta_b18, alt18)
   txt_set(txt_tcas_altr_t18, alt18)
   txt_set(txt_tcas_altr_b18, alt18)
+  
   local my_x = 400 - (21 / 2)
   local my_y = 641.36 - (21 / 2)
-  --local my_x = 400 - (21 / 2)
-  --local my_y = 641.36 - (21 / 2)
+  
 --white18
   visible(img_tcas_diamond18, tcas_on == 1 and tcas_show  == 1  and tcas_show18 == 1 and diamond_show18 == 1)
   visible(img_tcas_diamond_e18, tcas_on == 1 and tcas_show  == 1  and tcas_show18 == 1 and diamond_e_show18 == 1)
@@ -2862,10 +2853,10 @@ function tcas_show19(tcas_on,tcas_show,tcas_show19,alt_dn_show19,alt_up_show19,a
   txt_set(txt_tcas_alta_b19, alt19)
   txt_set(txt_tcas_altr_t19, alt19)
   txt_set(txt_tcas_altr_b19, alt19)
+  
   local my_x = 400 - (21 / 2)
   local my_y = 641.36 - (21 / 2)
-  --local my_x = 400 - (21 / 2)
-  --local my_y = 641.36 - (21 / 2)
+  
 --white19
   visible(img_tcas_diamond19, tcas_on == 1 and tcas_show  == 1  and tcas_show19 == 1 and diamond_show19 == 1)
   visible(img_tcas_diamond_e19, tcas_on == 1 and tcas_show  == 1  and tcas_show19 == 1 and diamond_e_show19 == 1)
@@ -2949,17 +2940,19 @@ xpl_dataref_subscribe(  "laminar/B738/EFIS/tcas_on", "INT",
 
 function pwr_callback(batbus_status)
 
-	visible(black_bg_no_power, 	batbus_status == 0)
+	visible(black_bg_no_power, 	batbus_status == 0) -- blank displays if no power, probably needs to check for more stuff here than just batbus_status
 
 end
 xpl_dataref_subscribe("laminar/B738/electric/batbus_status", "INT", pwr_callback)
 
 
---laminar/B738/pfd/ils_rotate0 -- ils runway takeoff degrees
+--TO DOs
+
+--laminar/B738/pfd/ils_rotate0
 --laminar/B738/nd/tc_x
---laminar/B738/nd/tc_y -- top of climb
+--laminar/B738/nd/tc_y -- top of climb position
 --laminar/B738/nd/td_x
---laminar/B738/nd/td_y
+--laminar/B738/nd/td_y -- top of descent position
 --laminar/B738/EFIS/green_arc --float
 --laminar/B738/EFIS/green_arc_show
 --RNP ANP laminar/B738/fms/rnp laminar/B738/fms/anp
@@ -2967,3 +2960,6 @@ xpl_dataref_subscribe("laminar/B738/electric/batbus_status", "INT", pwr_callback
 --finish vors
 --finish efis text
 --fix NM if greater 100, no decimal, alignment
+-- flightplan stuff
+-- WPTs added to display
+-- how to display weather and terrain ??????
