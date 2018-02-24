@@ -623,7 +623,6 @@ img_tcas_arrow_dn_amber19 =			img_add("img_tcas_arrow_dn_amber.png", -100, -100,
 img_triangle =						img_add("img_triangle.png", 374.5, 639, 50, 61)							visible(img_triangle,false)
 img_tfc_ring =						img_add("img_tfc_ring.png", 352.500, 593.861, 95, 95)					visible(img_tfc_ring,false)
 img_compass_rose_no_text =			img_add("img_compass_rose_no_text.png", -162.500, 78.86, 1125, 1125)	visible(img_compass_rose_no_text,false)
---img_compass_rose_no_text =			img_add("test.png", -162.500, 78.86, 1125, 1125)	visible(img_compass_rose_no_text,false)
 img_compass_text =					img_add("img_compass_text.png", -162.500, 78.86, 1125, 1125)			visible(img_compass_text,false)
 
 img_top_mask =						img_add("img_top_mask.png", 0, 0, 800, 800)								visible(img_top_mask,false) -- mask for the top
@@ -783,7 +782,6 @@ xpl_dataref_subscribe("laminar/B738/EFIS_control/capt/map_mode_pos", "INT", --no
 					  "sim/cockpit2/gauges/indicators/heading_AHARS_deg_mag_pilot", "FLOAT",
 					  "laminar/B738/EFIS/capt/map_range", "INT",
 					  general_nd)
-
 
 function top_right_corner(fpln_nav_id, lnav_dist_next, id_eta)
 
