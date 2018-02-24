@@ -2,7 +2,7 @@
 
 function lib_tcas ()
 
-	function general_tcas (nd_mode, traffic_ra, traffic_ta, tcas_on, transponder_pos)
+	function general_tcas (nd_mode, traffic_ra, traffic_ta, tcas_on, transponder_pos, map_range)
 	
 		visible(txt_tcas_warning_a,			traffic_ta == 1)
 		visible(txt_tcas_warning_r,			traffic_ra == 1)
@@ -15,8 +15,8 @@ function lib_tcas ()
 		elseif transponder_pos == 5 then
 			txt_set(txt_tcas, "TFC")
 		end
-		visible(txt_tcas_off1,					transponder_pos >= 1 and transponder_pos <= 3)
-		visible(txt_tcas_off2,					transponder_pos >= 1 and transponder_pos <= 3)
+		visible(txt_tcas_off1,					transponder_pos == 1 or transponder_pos == 2 or transponder_pos == 3)
+		visible(txt_tcas_off2,					transponder_pos == 1 or transponder_pos == 2 or transponder_pos == 3)
 		visible(txt_tcas,						(transponder_pos == 0 or transponder_pos == 4 or transponder_pos == 5) and tcas_on == 1 and nd_mode ~= 3)
 
 	
@@ -26,6 +26,7 @@ function lib_tcas ()
 							"laminar/B738/TCAS/traffic_ta", "INT",
 							"laminar/B738/EFIS/tcas_on", "INT",
 							"laminar/B738/knob/transponder_pos", "INT", --test 0, STBY 1, ALT OFF 2, ALT ON 3, TA 4, TA/TA 5
+							"laminar/B738/EFIS/capt/map_range", "INT",
 							general_tcas)
 
 	function tcas_show(tcas_on,tcas_show,tcas_show1,alt_dn_show,alt_up_show,arrow_dn_show,arrow_up_show,box_show,circle_show,diamond_e_show,diamond_show,alt,tcas_x,tcas_y)
