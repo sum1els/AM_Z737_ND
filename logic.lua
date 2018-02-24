@@ -206,45 +206,45 @@ txt_tcas_altw_b18 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_f
 txt_tcas_altw_b19 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: white; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_altw_b19,false)
 
 --tcas text amber top
-txt_tcas_alta_t =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t,false)
-txt_tcas_alta_t2 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t2,false)
-txt_tcas_alta_t3 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t3,false)
-txt_tcas_alta_t4 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t4,false)
-txt_tcas_alta_t5 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t5,false)
-txt_tcas_alta_t6 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t6,false)
-txt_tcas_alta_t7 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t7,false)
-txt_tcas_alta_t8 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t8,false)
-txt_tcas_alta_t9 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t9,false)
-txt_tcas_alta_t10 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t10,false)
-txt_tcas_alta_t11 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t11,false)
-txt_tcas_alta_t12 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t12,false)
-txt_tcas_alta_t13 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t13,false)
-txt_tcas_alta_t14 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t14,false)
-txt_tcas_alta_t15 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t15,false)
-txt_tcas_alta_t16 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t16,false)
-txt_tcas_alta_t17 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t17,false)
-txt_tcas_alta_t18 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t18,false)
-txt_tcas_alta_t19 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t19,false)
+txt_tcas_alta_t =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t,false)
+txt_tcas_alta_t2 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t2,false)
+txt_tcas_alta_t3 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t3,false)
+txt_tcas_alta_t4 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t4,false)
+txt_tcas_alta_t5 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t5,false)
+txt_tcas_alta_t6 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t6,false)
+txt_tcas_alta_t7 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t7,false)
+txt_tcas_alta_t8 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t8,false)
+txt_tcas_alta_t9 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t9,false)
+txt_tcas_alta_t10 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t10,false)
+txt_tcas_alta_t11 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t11,false)
+txt_tcas_alta_t12 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t12,false)
+txt_tcas_alta_t13 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t13,false)
+txt_tcas_alta_t14 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t14,false)
+txt_tcas_alta_t15 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t15,false)
+txt_tcas_alta_t16 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t16,false)
+txt_tcas_alta_t17 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t17,false)
+txt_tcas_alta_t18 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t18,false)
+txt_tcas_alta_t19 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_t19,false)
 -- tcas text amber bottom
-txt_tcas_alta_b =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b,false)
-txt_tcas_alta_b2 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b2,false)
-txt_tcas_alta_b3 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b3,false)
-txt_tcas_alta_b4 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b4,false)
-txt_tcas_alta_b5 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b5,false)
-txt_tcas_alta_b6 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b6,false)
-txt_tcas_alta_b7 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b7,false)
-txt_tcas_alta_b8 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b8,false)
-txt_tcas_alta_b9 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b9,false)
-txt_tcas_alta_b10 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b10,false)
-txt_tcas_alta_b11 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b11,false)
-txt_tcas_alta_b12 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b12,false)
-txt_tcas_alta_b13 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b13,false)
-txt_tcas_alta_b14 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b14,false)
-txt_tcas_alta_b15 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b15,false)
-txt_tcas_alta_b16 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b16,false)
-txt_tcas_alta_b17 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b17,false)
-txt_tcas_alta_b18 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b18,false)
-txt_tcas_alta_b19 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FF7F2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b19,false)
+txt_tcas_alta_b =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b,false)
+txt_tcas_alta_b2 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b2,false)
+txt_tcas_alta_b3 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b3,false)
+txt_tcas_alta_b4 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b4,false)
+txt_tcas_alta_b5 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b5,false)
+txt_tcas_alta_b6 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b6,false)
+txt_tcas_alta_b7 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b7,false)
+txt_tcas_alta_b8 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b8,false)
+txt_tcas_alta_b9 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b9,false)
+txt_tcas_alta_b10 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b10,false)
+txt_tcas_alta_b11 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b11,false)
+txt_tcas_alta_b12 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b12,false)
+txt_tcas_alta_b13 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b13,false)
+txt_tcas_alta_b14 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b14,false)
+txt_tcas_alta_b15 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b15,false)
+txt_tcas_alta_b16 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b16,false)
+txt_tcas_alta_b17 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b17,false)
+txt_tcas_alta_b18 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b18,false)
+txt_tcas_alta_b19 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: #FFAE2A; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_alta_b19,false)
 
 --tcas text red top
 txt_tcas_altr_t =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: red; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_altr_t,false)
@@ -287,7 +287,7 @@ txt_tcas_altr_b17 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_f
 txt_tcas_altr_b18 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: red; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_altr_b18,false)
 txt_tcas_altr_b19 =					txt_add(" ", "size:"..alt_txt_size.."; font:"..alt_txt_font.."; color: red; halign:"..alt_txt_halign..";", -100, -100, alt_txt_width, alt_txt_height) visible(txt_tcas_altr_b19,false)
 
-txt_tcas_warning_a =				txt_add("TRAFFIC", "size:20px; font:my737glass.otf; color:#FF7F2A; halign:right;", 680, 330, 100, 24) visible(txt_tcas_warning_a,false)
+txt_tcas_warning_a =				txt_add("TRAFFIC", "size:20px; font:my737glass.otf; color:#FFAE2A; halign:right;", 680, 330, 100, 24) visible(txt_tcas_warning_a,false)
 txt_tcas_warning_r =				txt_add("TRAFFIC", "size:20px; font:my737glass.otf; color:red; halign:right;", 680, 330, 100, 24) visible(txt_tcas_warning_r,false)
 
 
@@ -654,15 +654,15 @@ img_range_markers =					img_add("img_range_markers.png", 390.972, 219.15, 18.057
 --failure flags
 map_failure_flag_box = canvas_add(0, 0, 800, 800, function()
 	_rect(374, 456, 52, 34)
-	_stroke("#FF7F2A", 3)
+	_stroke("#FFAE2A", 3)
 end)visible(map_failure_flag_box,false)
 
 hdg_failure_flag_box = canvas_add(0, 0, 800, 800, function()
 	_rect(374, 10, 52, 34)
-	_stroke("#FF7F2A", 3)
+	_stroke("#FFAE2A", 3)
 end)visible(hdg_failure_flag_box,false)
-txt_hdg_failure_flag =				txt_add("HDG", "size:22px; font:my737glass.otf; color: #FF7F2A; halign:center;", 350, 14, 100, 50) visible(txt_hdg_failure_flag,false)
-txt_map_failure_flag =				txt_add("MAP", "size:22px; font:my737glass.otf; color: #FF7F2A; halign:center;", 350, 460, 100, 50) visible(txt_map_failure_flag,false)
+txt_hdg_failure_flag =				txt_add("HDG", "size:22px; font:my737glass.otf; color: #FFAE2A; halign:center;", 350, 14, 100, 50) visible(txt_hdg_failure_flag,false)
+txt_map_failure_flag =				txt_add("MAP", "size:22px; font:my737glass.otf; color: #FFAE2A; halign:center;", 350, 460, 100, 50) visible(txt_map_failure_flag,false)
 
 canvas_efis_range = canvas_add(342, 325, 50, 26, function()
 	_fill("black")
@@ -1003,15 +1003,14 @@ xpl_dataref_subscribe("laminar/B738/EFIS/EFIS_airport_on", "INT",
 					  "laminar/B738/nd/apt_id28", "STRING",
 					  "laminar/B738/nd/apt_id29", "STRING", airports)
 					  
-function sta (EFIS_vor_on, obj_x, obj_y, object_id0,object_id1,object_id2,object_id3,object_id4,object_id5,object_id6,object_id7,object_id8,object_id9,object_id10,object_id11,object_id12,object_id13,object_id14,object_id15,object_id16,object_id17,object_id18,object_id19,object_id20,object_id21,object_id22,object_id23,object_id24,object_id25,object_id26,object_id27,object_id28,object_id29,object_id30,object_id31,object_id32,object_id33,object_id34,object_id35,object_id36,object_id37,object_id38,object_id39,object_id40,object_id41,object_id42,object_id43,object_id44,object_id45,object_id46,object_id47,object_id48,object_id49,object_type0,object_type1,object_type2,object_type3,object_type4,object_type5,object_type6,object_type7,object_type8,object_type9,object_type10,object_type11,object_type12,object_type13,object_type14,object_type15,object_type16,object_type17,object_type18,object_type19,object_type20,object_type21,object_type22,object_type23,object_type24,object_type25,object_type26,object_type27,object_type28,object_type29,object_type30,object_type31,object_type32,object_type33,object_type34,object_type35,object_type36,object_type37,object_type38,object_type39,object_type40,object_type41,object_type42,object_type43,object_type44,object_type45,object_type46,object_type47,object_type48,object_type49)
+--[[ function sta (EFIS_vor_on, obj_x, obj_y, object_id0,object_id1,object_id2,object_id3,object_id4,object_id5,object_id6,object_id7,object_id8,object_id9,object_id10,object_id11,object_id12,object_id13,object_id14,object_id15,object_id16,object_id17,object_id18,object_id19,object_id20,object_id21,object_id22,object_id23,object_id24,object_id25,object_id26,object_id27,object_id28,object_id29,object_id30,object_id31,object_id32,object_id33,object_id34,object_id35,object_id36,object_id37,object_id38,object_id39,object_id40,object_id41,object_id42,object_id43,object_id44,object_id45,object_id46,object_id47,object_id48,object_id49,object_type0,object_type1,object_type2,object_type3,object_type4,object_type5,object_type6,object_type7,object_type8,object_type9,object_type10,object_type11,object_type12,object_type13,object_type14,object_type15,object_type16,object_type17,object_type18,object_type19,object_type20,object_type21,object_type22,object_type23,object_type24,object_type25,object_type26,object_type27,object_type28,object_type29,object_type30,object_type31,object_type32,object_type33,object_type34,object_type35,object_type36,object_type37,object_type38,object_type39,object_type40,object_type41,object_type42,object_type43,object_type44,object_type45,object_type46,object_type47,object_type48,object_type49) --]]
+function sta (EFIS_vor_on, obj_x, obj_y, object_id0,object_id1,object_id2,object_id3,object_id4,object_id5,object_id6,object_id7,object_id8,object_id9,object_id10,object_id11,object_id12,object_id13,object_id14,object_id15,object_id16,object_id17,object_id18,object_id19,object_id20,object_id21,object_id22,object_id23,object_id24,object_id25,object_id26,object_id27,object_id28,object_id29,object_id30,object_id31,object_id32,object_id33,object_id34,object_id35,object_id36,object_id37,object_id38,object_id39,object_id40,object_id41,object_id42,object_id43,object_id44,object_id45,object_id46,object_id47,object_id48,object_id49)
 
-	local sta_txt = {txt_sta0, txt_sta1, txt_sta2, txt_sta3, txt_sta4, txt_sta5, txt_sta6, txt_sta7, txt_sta8, txt_sta9, txt_sta10, txt_sta11, txt_sta12, txt_sta13, txt_sta14, txt_sta15, txt_sta16, txt_sta17, txt_sta18, txt_sta19, txt_sta20, txt_sta21, txt_sta22, txt_sta23, txt_sta24, txt_sta25, txt_sta26, txt_sta27, txt_sta28, txt_sta29, txt_sta30, txt_sta31, txt_sta32, txt_sta33, txt_sta34, txt_sta35, txt_sta36, txt_sta37, txt_sta38, txt_sta39, txt_sta40, txt_sta41, txt_sta42, txt_sta43, txt_sta44, txt_sta45, txt_sta46, txt_sta47, txt_sta48, txt_sta49}
-	
+	local sta_txt = {txt_sta0, txt_sta1, txt_sta2, txt_sta3, txt_sta4, txt_sta5, txt_sta6, txt_sta7, txt_sta8, txt_sta9, txt_sta10, txt_sta11, txt_sta12, txt_sta13, txt_sta14, txt_sta15, txt_sta16, txt_sta17, txt_sta18, txt_sta19, txt_sta20, txt_sta21, txt_sta22, txt_sta23, txt_sta24, txt_sta25, txt_sta26, txt_sta27, txt_sta28, txt_sta29, txt_sta30, txt_sta31, txt_sta32, txt_sta33, txt_sta34, txt_sta35, txt_sta36, txt_sta37, txt_sta38, txt_sta39, txt_sta40, txt_sta41, txt_sta42, txt_sta43, txt_sta44, txt_sta45, txt_sta46, txt_sta47, txt_sta48, txt_sta49}	
 	
 	local sta_txt_value = {object_id0,object_id1,object_id2,object_id3,object_id4,object_id5,object_id6,object_id7,object_id8,object_id9,object_id10,object_id11,object_id12,object_id13,object_id14,object_id15,object_id16,object_id17,object_id18,object_id19,object_id20,object_id21,object_id22,object_id23,object_id24,object_id25,object_id26,object_id27,object_id28,object_id29,object_id30,object_id31,object_id32,object_id33,object_id34,object_id35,object_id36,object_id37,object_id38,object_id39,object_id40,object_id41,object_id42,object_id43,object_id44,object_id45,object_id46,object_id47,object_id48,object_id49}
-
 	
-	local vortac_cyan = {img_vortac_cyan0, img_vortac_cyan1, img_vortac_cyan2, img_vortac_cyan3, img_vortac_cyan4, img_vortac_cyan5, img_vortac_cyan6, img_vortac_cyan7, img_vortac_cyan8, img_vortac_cyan9, img_vortac_cyan10, img_vortac_cyan11, img_vortac_cyan12, img_vortac_cyan13, img_vortac_cyan14, img_vortac_cyan15, img_vortac_cyan16, img_vortac_cyan17, img_vortac_cyan18, img_vortac_cyan19, img_vortac_cyan20, img_vortac_cyan21, img_vortac_cyan22, img_vortac_cyan23, img_vortac_cyan24, img_vortac_cyan25, img_vortac_cyan26, img_vortac_cyan27, img_vortac_cyan28, img_vortac_cyan29, img_vortac_cyan30, img_vortac_cyan31, img_vortac_cyan32, img_vortac_cyan33, img_vortac_cyan34, img_vortac_cyan35, img_vortac_cyan36, img_vortac_cyan37, img_vortac_cyan38, img_vortac_cyan39, img_vortac_cyan40, img_vortac_cyan41, img_vortac_cyan42, img_vortac_cyan43, img_vortac_cyan44, img_vortac_cyan45, img_vortac_cyan46, img_vortac_cyan47, img_vortac_cyan48, img_vortac_cyan49, }
+	local vortac_cyan = {img_vortac_cyan0, img_vortac_cyan1, img_vortac_cyan2, img_vortac_cyan3, img_vortac_cyan4, img_vortac_cyan5, img_vortac_cyan6, img_vortac_cyan7, img_vortac_cyan8, img_vortac_cyan9, img_vortac_cyan10, img_vortac_cyan11, img_vortac_cyan12, img_vortac_cyan13, img_vortac_cyan14, img_vortac_cyan15, img_vortac_cyan16, img_vortac_cyan17, img_vortac_cyan18, img_vortac_cyan19, img_vortac_cyan20, img_vortac_cyan21, img_vortac_cyan22, img_vortac_cyan23, img_vortac_cyan24, img_vortac_cyan25, img_vortac_cyan26, img_vortac_cyan27, img_vortac_cyan28, img_vortac_cyan29, img_vortac_cyan30, img_vortac_cyan31, img_vortac_cyan32, img_vortac_cyan33, img_vortac_cyan34, img_vortac_cyan35, img_vortac_cyan36, img_vortac_cyan37, img_vortac_cyan38, img_vortac_cyan39, img_vortac_cyan40, img_vortac_cyan41, img_vortac_cyan42, img_vortac_cyan43, img_vortac_cyan44, img_vortac_cyan45, img_vortac_cyan46, img_vortac_cyan47, img_vortac_cyan48, img_vortac_cyan49}
 
 	local my_x = 400 - (21 / 2)
 	local my_y = 641.36 - (21 / 2)
@@ -1093,8 +1092,8 @@ xpl_dataref_subscribe(	"laminar/B738/EFIS/EFIS_vor_on", "INT",
 						"laminar/B738/nd/object_id46", "STRING",
 						"laminar/B738/nd/object_id47", "STRING",
 						"laminar/B738/nd/object_id48", "STRING",
-						"laminar/B738/nd/object_id49", "STRING",
-						"laminar/B738/nd/object_type00", "INT",
+						"laminar/B738/nd/object_id49", "STRING", sta)
+					--[[ 	"laminar/B738/nd/object_type00", "INT",
 						"laminar/B738/nd/object_type01", "INT",
 						"laminar/B738/nd/object_type02", "INT",
 						"laminar/B738/nd/object_type03", "INT",
@@ -1143,11 +1142,70 @@ xpl_dataref_subscribe(	"laminar/B738/EFIS/EFIS_vor_on", "INT",
 						"laminar/B738/nd/object_type46", "INT",
 						"laminar/B738/nd/object_type47", "INT",
 						"laminar/B738/nd/object_type48", "INT",
-						"laminar/B738/nd/object_type49", "INT", sta)
+						"laminar/B738/nd/object_type49", "INT",  --]]
 
-function wpt()
+--[[ function fix (EFIS_fix_on,obj_x,obj_y,object_id0w,object_id1w,object_id2w,object_id3w,object_id4w,object_id5w,object_id6w,object_id7w,object_id8w,object_id9w,object_id10w,object_id11w,object_id12w,object_id13w,object_id14w,object_id15w,object_id16w,object_id17w,object_id18w,object_id19w,object_id20w,object_id21w,object_id22w,object_id23w,object_id24w,object_id25w,object_id26w,object_id27w,object_id28w,object_id29w,object_id30w,object_id31w,object_id32w,object_id33w,object_id34w,object_id35w,object_id36w,object_id37w,object_id38w,object_id39w,object_id40w,object_id41w,object_id42w,object_id43w,object_id44w,object_id45w,object_id46w,object_id47w,object_id48w,object_id49w)
+
+	local fix_txt = {txt_wpt0, txt_wpt1, txt_wpt2, txt_wpt3, txt_wpt4, txt_wpt5, txt_wpt6, txt_wpt7, txt_wpt8, txt_wpt9, txt_wpt10, txt_wpt11, txt_wpt12, txt_wpt13, txt_wpt14, txt_wpt15, txt_wpt16, txt_wpt17, txt_wpt18, txt_wpt19, txt_wpt20, txt_wpt21, txt_wpt22, txt_wpt23, txt_wpt24, txt_wpt25, txt_wpt26, txt_wpt27, txt_wpt28, txt_wpt29, txt_wpt30, txt_wpt31, txt_wpt32, txt_wpt33, txt_wpt34, txt_wpt35, txt_wpt36, txt_wpt37, txt_wpt38, txt_wpt39, txt_wpt40, txt_wpt41, txt_wpt42, txt_wpt43, txt_wpt44, txt_wpt45, txt_wpt46, txt_wpt47, txt_wpt48, txt_wpt49}	
+	
+	local fix_txt_value = {object_id0w,object_id1w,object_id2w,object_id3w,object_id4w,object_id5w,object_id6w,object_id7w,object_id8w,object_id9w,object_id10w,object_id11w,object_id12w,object_id13w,object_id14w,object_id15w,object_id16w,object_id17w,object_id18w,object_id19w,object_id20w,object_id21w,object_id22w,object_id23w,object_id24w,object_id25w,object_id26w,object_id27w,object_id28w,object_id29w,object_id30w,object_id31w,object_id32w,object_id33w,object_id34w,object_id35w,object_id36w,object_id37w,object_id38w,object_id39w,object_id40w,object_id41w,object_id42w,object_id43w,object_id44w,object_id45w,object_id46w,object_id47w,object_id48w,object_id49w}
+	
+	local fix_triangle = {img_fix_triangle0, img_fix_triangle1, img_fix_triangle2, img_fix_triangle3, img_fix_triangle4, img_fix_triangle5, img_fix_triangle6, img_fix_triangle7, img_fix_triangle8, img_fix_triangle9, img_fix_triangle10, img_fix_triangle11, img_fix_triangle12, img_fix_triangle13, img_fix_triangle14, img_fix_triangle15, img_fix_triangle16, img_fix_triangle17, img_fix_triangle18, img_fix_triangle19, img_fix_triangle20, img_fix_triangle21, img_fix_triangle22, img_fix_triangle23, img_fix_triangle24, img_fix_triangle25, img_fix_triangle26, img_fix_triangle27, img_fix_triangle28, img_fix_triangle29, img_fix_triangle30, img_fix_triangle31, img_fix_triangle32, img_fix_triangle33, img_fix_triangle34, img_fix_triangle35, img_fix_triangle36, img_fix_triangle37, img_fix_triangle38, img_fix_triangle39, img_fix_triangle40, img_fix_triangle41, img_fix_triangle42, img_fix_triangle43, img_fix_triangle44, img_fix_triangle45, img_fix_triangle46, img_fix_triangle47, img_fix_triangle48, img_fix_triangle49}
 
 end
+xpl_dataref_subscribe(	"laminar/B738/EFIS/EFIS_fix_on", "INT",
+						"laminar/B738/nd/object_x", "FLOAT[50]",						
+						"laminar/B738/nd/object_y", "FLOAT[50]",
+						"laminar/B738/nd/object_id00w", "STRING",	
+						"laminar/B738/nd/object_id01w", "STRING",	
+						"laminar/B738/nd/object_id02w", "STRING",	
+						"laminar/B738/nd/object_id03w", "STRING",	
+						"laminar/B738/nd/object_id04w", "STRING",	
+						"laminar/B738/nd/object_id05w", "STRING",	
+						"laminar/B738/nd/object_id06w", "STRING",	
+						"laminar/B738/nd/object_id07w", "STRING",	
+						"laminar/B738/nd/object_id08w", "STRING",	
+						"laminar/B738/nd/object_id09w", "STRING",	
+						"laminar/B738/nd/object_id10w", "STRING",	
+						"laminar/B738/nd/object_id11w", "STRING",	
+						"laminar/B738/nd/object_id12w", "STRING",	
+						"laminar/B738/nd/object_id13w", "STRING",	
+						"laminar/B738/nd/object_id14w", "STRING",	
+						"laminar/B738/nd/object_id15w", "STRING",	
+						"laminar/B738/nd/object_id16w", "STRING",	
+						"laminar/B738/nd/object_id17w", "STRING",	
+						"laminar/B738/nd/object_id18w", "STRING",	
+						"laminar/B738/nd/object_id19w", "STRING",	
+						"laminar/B738/nd/object_id20w", "STRING",	
+						"laminar/B738/nd/object_id21w", "STRING",	
+						"laminar/B738/nd/object_id22w", "STRING",	
+						"laminar/B738/nd/object_id23w", "STRING",	
+						"laminar/B738/nd/object_id24w", "STRING",	
+						"laminar/B738/nd/object_id25w", "STRING",	
+						"laminar/B738/nd/object_id26w", "STRING",	
+						"laminar/B738/nd/object_id27w", "STRING",	
+						"laminar/B738/nd/object_id28w", "STRING",	
+						"laminar/B738/nd/object_id29w", "STRING",	
+						"laminar/B738/nd/object_id30w", "STRING",	
+						"laminar/B738/nd/object_id31w", "STRING",	
+						"laminar/B738/nd/object_id32w", "STRING",	
+						"laminar/B738/nd/object_id33w", "STRING",	
+						"laminar/B738/nd/object_id34w", "STRING",	
+						"laminar/B738/nd/object_id35w", "STRING",	
+						"laminar/B738/nd/object_id36w", "STRING",	
+						"laminar/B738/nd/object_id37w", "STRING",	
+						"laminar/B738/nd/object_id38w", "STRING",	
+						"laminar/B738/nd/object_id39w", "STRING",	
+						"laminar/B738/nd/object_id40w", "STRING",	
+						"laminar/B738/nd/object_id41w", "STRING",	
+						"laminar/B738/nd/object_id42w", "STRING",	
+						"laminar/B738/nd/object_id43w", "STRING",	
+						"laminar/B738/nd/object_id44w", "STRING",	
+						"laminar/B738/nd/object_id45w", "STRING",	
+						"laminar/B738/nd/object_id46w", "STRING",	
+						"laminar/B738/nd/object_id47w", "STRING",	
+						"laminar/B738/nd/object_id48w", "STRING",	
+						"laminar/B738/nd/object_id49w", "STRING", fix) --]]
 
 function tcas_show(tcas_on,tcas_show,tcas_show1,alt_dn_show,alt_up_show,arrow_dn_show,arrow_up_show,box_show,circle_show,diamond_e_show,diamond_show,alt,tcas_x,tcas_y)
 					  
