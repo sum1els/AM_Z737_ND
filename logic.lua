@@ -1,6 +1,6 @@
 canvas_default_black_bg = canvas_add(0, 0, 800, 800, function()
 	_fill("black")
-end)																										visible(canvas_default_black_bg,true)
+end)visible(canvas_default_black_bg,true)
 
 -- text
 -- airport codes
@@ -676,7 +676,7 @@ canvas_vor2 = canvas_add(680, 680 , 120, 120, function() --created a black box b
 	_fill("black")
 end)visible(canvas_vor2,true)
 
-txt_vor_1 =							txt_add("VOR 1", "size:24px; font:my737glass.otf; color:lime; halign:left;", 5, 690, 500, 24) 	visible(txt_vor_1,false)
+txt_vor_1 =							txt_add("VOR 1", "size:24px; font:my737glass.otf; color:lime; halign:left;", 10, 690, 500, 24) 	visible(txt_vor_1,false)
 txt_vor_2 =							txt_add("VOR 2", "size:24px; font:my737glass.otf; color:lime; halign:left;", 695, 690, 100, 24) visible(txt_vor_2,false)
 txt_efis_range =					txt_add(" ", "size:22px; font:my737glass.otf; color:white; halign:right;", 342, 325, 50, 26) 	visible(txt_efis_range,false)
 txt_fpln_nav =						txt_add(" ", "size:24px; font:my737glass.otf; color:magenta; halign:left;", 680, 0, 120, 50) 	visible(txt_fpln_nav,false)
@@ -685,6 +685,13 @@ txt_id_eta_small =					txt_add("Z", "size:16px; font:my737glass.otf; color:white
 txt_lnav_dist_next =				txt_add(" ", "size:22px; font:my737glass.otf; color:white; halign:right;", 650, 54, 80, 50) 	visible(txt_lnav_dist_next,false)
 txt_lnav_dist_next_small =			txt_add("NM", "size:18px; font:my737glass.otf; color:white; halign:left;", 730, 58, 40, 50) 	visible(txt_lnav_dist_next_small,false)
 
+txt_arpt =							txt_add("ARPT", "size:18px; font:my737glass.otf; color:cyan; halign:left;", 10, 500, 150, 50) 		visible(txt_arpt,false)
+txt_wpt =							txt_add("WPT", "size:18px; font:my737glass.otf; color:cyan; halign:left;", 10, 520, 150, 50) 		visible(txt_wpt,false)
+txt_sta =							txt_add("STA", "size:18px; font:my737glass.otf; color:cyan; halign:left;", 10, 540, 150, 50) 		visible(txt_sta,false)
+txt_tcas_off1 =						txt_add("TCAS", "size:18px; font:my737glass.otf; color:#FFAE2A; halign:left;", 10, 650, 150, 50) 	visible(txt_tcas_off1,false)
+txt_tcas_off2 =						txt_add("OFF", "size:18px; font:my737glass.otf; color:#FFAE2A; halign:left;", 10, 670, 150, 50) 	visible(txt_tcas_off2,false)
+txt_tcas =							txt_add(" ", "size:18px; font:my737glass.otf; color:cyan; halign:left;", 10, 650, 150, 50) 			visible(txt_tcas,false)
+
 --groups
 wind_speed_direction = group_add(txt_wind_heading, txt_wind_speed, img_wind_arrow)
 
@@ -692,11 +699,9 @@ wind_speed_direction = group_add(txt_wind_heading, txt_wind_speed, img_wind_arro
 
 cyan_lines = canvas_add(0, 0, 800, 800)
 
-black_bg_no_power = canvas_add(0, 0, 800, 800, function() --black canvas over everything to simulate displays that are off
-	_fill("black")
-end)
 
-function nd_images (nd_mode, irs_mode, wind_heading, wind_speed, irs_mode, hdg_bug_line, current_track, true_airspeed, groundspeed) 
+
+function nd_images (nd_mode, irs_mode, wind_heading, wind_speed, irs_mode, hdg_bug_line, current_track, true_airspeed, groundspeed, transponder_pos, tcas_on) 
 	visible(img_triangle,					nd_mode ~= 3) --Airplane symbol (W) MAP, MAP CTR,VOR,APP 
 	visible(img_compass_rose_no_text,		nd_mode ~= 3) --Expanded compass (W)
 	visible(img_top_mask,					nd_mode ~= 3)
@@ -719,7 +724,18 @@ function nd_images (nd_mode, irs_mode, wind_heading, wind_speed, irs_mode, hdg_b
 	visible(txt_map_failure_flag,			irs_mode ~= 2)
 	visible(hdg_failure_flag_box,			irs_mode ~= 2) -- could use more logic instead of just going away when irs is aligned
 	visible(map_failure_flag_box,			irs_mode ~= 2) -- could use more logic instead of just going away when irs is aligned
+	visible(txt_tcas_off1,					transponder_pos >= 1 and transponder_pos <= 3)
+	visible(txt_tcas_off2,					transponder_pos >= 1 and transponder_pos <= 3)
 	
+	
+	if transponder_pos == 0 then
+		txt_set(txt_tcas, "TCAS TEST")
+	elseif transponder_pos == 4 then
+		txt_set(txt_tcas, "TA ONLY")
+	elseif transponder_pos == 5 then
+		txt_set(txt_tcas, "TFC")
+	end
+	visible(txt_tcas,						(transponder_pos == 0 or transponder_pos == 4 or transponder_pos == 5) and tcas_on == 1 and nd_mode ~= 3)
 	
 	if nd_mode == 2 then 
 		txt_set(txt_trk_hdg_green, "TRK") --Shows track in MAP, MAP CTR.
@@ -754,7 +770,10 @@ xpl_dataref_subscribe("laminar/B738/EFIS_control/capt/map_mode_pos", "INT", --no
 					  "laminar/B738/nd/hdg_bug_line", "INT", 
 					  "sim/cockpit2/gauges/indicators/ground_track_mag_pilot", "FLOAT",
 					  "sim/flightmodel/position/true_airspeed", "FLOAT", 
-					  "laminar/b738/fmodpack/real_groundspeed", "FLOAT",  nd_images)
+					  "laminar/b738/fmodpack/real_groundspeed", "FLOAT",
+					  "laminar/B738/knob/transponder_pos", "INT", --test 0, STBY 1, ALT OFF 2, ALT ON 3, TA 4, TA/TA 5
+					  "laminar/B738/EFIS/tcas_on", "INT",
+					  nd_images)
 
 function white_waypoints (wpt_x, wpt_y, wpt_id0w, wpt_id1w, wpt_id2w, wpt_id3w, wpt_id4w, wpt_id5w, wpt_id6w, wpt_id7w, wpt_id8w, wpt_id9w, wpt_id10w, wpt_id11w, wpt_id12w, wpt_id13w, wpt_id14w, wpt_id15w, wpt_id16w, wpt_id17w, wpt_id18w, wpt_id19w, legs_num2)
 
@@ -943,6 +962,8 @@ function airports (EFIS_airport_on, apt_x, apt_y, apt_id0,apt_id1,apt_id2,apt_id
 
 	local apt_img_array = {img_airport_circle0,img_airport_circle1,img_airport_circle2,img_airport_circle3,img_airport_circle4,img_airport_circle5,img_airport_circle6,img_airport_circle7,img_airport_circle8,img_airport_circle9,img_airport_circle10,img_airport_circle11,img_airport_circle12,img_airport_circle13,img_airport_circle14,img_airport_circle15,img_airport_circle16,img_airport_circle17,img_airport_circle18,img_airport_circle19,img_airport_circle20,img_airport_circle21,img_airport_circle22,img_airport_circle23,img_airport_circle24,img_airport_circle25,img_airport_circle26,img_airport_circle27,img_airport_circle28,img_airport_circle29}
 	
+	visible(txt_arpt,	EFIS_airport_on == 1)
+	
 	local my_x = 400 - (21 / 2)
 	local my_y = 641.36 - (21 / 2)
 
@@ -1012,6 +1033,8 @@ function sta (EFIS_vor_on, obj_x, obj_y, object_id0,object_id1,object_id2,object
 	
 	local vortac_cyan = {img_vortac_cyan0, img_vortac_cyan1, img_vortac_cyan2, img_vortac_cyan3, img_vortac_cyan4, img_vortac_cyan5, img_vortac_cyan6, img_vortac_cyan7, img_vortac_cyan8, img_vortac_cyan9, img_vortac_cyan10, img_vortac_cyan11, img_vortac_cyan12, img_vortac_cyan13, img_vortac_cyan14, img_vortac_cyan15, img_vortac_cyan16, img_vortac_cyan17, img_vortac_cyan18, img_vortac_cyan19, img_vortac_cyan20, img_vortac_cyan21, img_vortac_cyan22, img_vortac_cyan23, img_vortac_cyan24, img_vortac_cyan25, img_vortac_cyan26, img_vortac_cyan27, img_vortac_cyan28, img_vortac_cyan29, img_vortac_cyan30, img_vortac_cyan31, img_vortac_cyan32, img_vortac_cyan33, img_vortac_cyan34, img_vortac_cyan35, img_vortac_cyan36, img_vortac_cyan37, img_vortac_cyan38, img_vortac_cyan39, img_vortac_cyan40, img_vortac_cyan41, img_vortac_cyan42, img_vortac_cyan43, img_vortac_cyan44, img_vortac_cyan45, img_vortac_cyan46, img_vortac_cyan47, img_vortac_cyan48, img_vortac_cyan49}
 
+	visible(txt_sta,	EFIS_vor_on == 1)
+	
 	local my_x = 400 - (21 / 2)
 	local my_y = 641.36 - (21 / 2)
 
@@ -2995,13 +3018,23 @@ xpl_dataref_subscribe(  "laminar/B738/EFIS/tcas_on", "INT",
                         "laminar/B738/TCAS/alt_dn_show19", "INT",
                         "laminar/B738/TCAS/x19", "FLOAT",
                         "laminar/B738/TCAS/y19", "FLOAT" , tcas_show19)
+						
+black_bg_no_power = canvas_add(0, 0, 800, 800, function() --black canvas over everything to simulate displays that are off
+	_fill("black")
+end)
+fade = canvas_add(0, 0, 800, 800, function() --black canvas for fading instrument
+	_fill("black")
+end)visible(fade,true)
 
-function pwr_callback(batbus_status)
+function pwr_callback(instrument_brightness, batbus_status)
 
 	visible(black_bg_no_power, 	batbus_status == 0) -- blank displays if no power, probably needs to check for more stuff here than just batbus_status
+	local x = 1 - instrument_brightness[3] -- fades the ND
+	opacity(fade, x)
 
 end
-xpl_dataref_subscribe("laminar/B738/electric/batbus_status", "INT", pwr_callback)
+xpl_dataref_subscribe(	"laminar/B738/electric/instrument_brightness", "FLOAT[16]",
+						"laminar/B738/electric/batbus_status", "INT", pwr_callback)
 
 
 --TO DOs
