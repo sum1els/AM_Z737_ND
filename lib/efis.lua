@@ -1,6 +1,118 @@
 	-- EFIS functions --
 
+
+	
 function lib_efis_functions()
+
+	function vor_adf (vor1_off_pos, vor2_off_pos, vor1_sel_id, vor2_sel_id, vor1_dme, vor2_dme, vor1_show, vor1_sel_x, vor1_sel_y, vor2_show, vor2_sel_x, vor2_sel_y, vor1_line_show, vor1_sel_crs, vor1_sel_bcrs, vor2_line_show, vor2_sel_crs, vor2_sel_bcrs, track_mag_pilot, irs_mode)
+		--
+		--VOR2 seems a little buggy in ZiboMod datarefs, so expect some weird behavior
+		--
+		txt_set(txt_vor1_bcrs, vor1_sel_bcrs)
+		txt_set(txt_vor1_crs, vor1_sel_crs)
+		txt_set(txt_vor2_bcrs, vor2_sel_bcrs)
+		txt_set(txt_vor2_crs, vor2_sel_crs)
+		
+		move(img_crs_line1, get_x_px(vor1_sel_x, 40.892, 18), get_y_px(vor1_sel_y, 35.414, -985), nil, nil)
+		move(txt_vor1_bcrs, get_x_px(vor1_sel_x, 40.892, -79.55), get_y_px(vor1_sel_y, 0, -30), nil, nil)
+		move(txt_vor1_crs, get_x_px(vor1_sel_x, 40.892, -79.55), get_y_px(vor1_sel_y, 0, -30), nil, nil)
+		
+		move(img_crs_line2, get_x_px(vor2_sel_x, 40.892, 18), get_y_px(vor2_sel_y, 35.414, -985), nil, nil)
+		move(txt_vor2_bcrs, get_x_px(vor2_sel_x, 40.892, -79.55), get_y_px(vor2_sel_y, 0, -30), nil, nil)
+		move(txt_vor2_crs, get_x_px(vor2_sel_x, 40.892, -79.55), get_y_px(vor2_sel_y, 0, -30), nil, nil)
+		
+		img_rotate(img_crs_line1, vor1_sel_bcrs - track_mag_pilot)
+		img_rotate(txt_vor1_bcrs, vor1_sel_bcrs - track_mag_pilot - 90)
+		img_rotate(txt_vor1_crs, vor1_sel_bcrs - track_mag_pilot - 90)
+		img_rotate(img_crs_line2, vor2_sel_bcrs - track_mag_pilot)
+		img_rotate(txt_vor2_bcrs, vor2_sel_bcrs - track_mag_pilot - 90)
+		img_rotate(txt_vor2_crs, vor2_sel_bcrs - track_mag_pilot - 90)
+		
+		visible(img_crs_line1,		vor1_line_show == 1 and vor1_show == 1)
+		visible(txt_vor1_crs,		vor1_line_show == 1 and vor1_show == 1)
+		visible(txt_vor1_bcrs,		vor1_line_show == 1 and vor1_show == 1)
+		visible(img_crs_line2,		vor2_line_show == 1 and vor2_show == 1)
+		visible(txt_vor2_crs,		vor2_line_show == 1 and vor2_show == 1)
+		visible(txt_vor2_bcrs,		vor2_line_show == 1 and vor2_show == 1)
+		
+		if vor1_show == 1 then
+			txt_set(txt_vortac_green1, vor1_sel_id)
+			move(img_vortac_green1, get_x_px(vor1_sel_x, 40.892, 0), get_y_px(vor1_sel_y, 35.414, 0) , nil,nil)
+			move(txt_vortac_green1, get_x_px(vor1_sel_x, 40.892, 16), get_y_px(vor1_sel_y, 35.414, 35) , nil,nil)
+			visible(img_vortac_green1,true)
+			visible(txt_vortac_green1,true)
+		else
+			visible(img_vortac_green1,false)
+			visible(txt_vortac_green1,false)
+		end
+		
+		if vor2_show == 1 then
+			txt_set(txt_vortac_green2, vor2_sel_id)
+			move(img_vortac_green2, get_x_px(vor2_sel_x, 40.892, 0), get_y_px(vor2_sel_y, 35.414, 0), nil,nil)
+			move(txt_vortac_green2, get_x_px(vor2_sel_x, 40.892, 16), get_y_px(vor2_sel_y, 35.414, 35), nil,nil)
+			visible(img_vortac_green2,true)
+			visible(txt_vortac_green2,true)
+		else
+			visible(img_vortac_green2,false)
+			visible(txt_vortac_green2,false)
+		end
+		
+		if vor1_dme > 0 then
+			txt_set(txt_vor_1_id, vor1_sel_id)
+				if vor1_dme < 10 then
+					txt_set(txt_vor_1_dme, "DME "..string.format("0%.1f", vor1_dme))
+				else
+					txt_set(txt_vor_1_dme, "DME "..string.format("%.1f", vor1_dme))
+				end
+		else
+			txt_set(txt_vor_1_id, "----")
+			txt_set(txt_vor_1_dme, "DME ---")
+		end
+		
+		if vor2_dme > 0 then
+			txt_set(txt_vor_2_id, vor2_sel_id)
+			if vor2_dme < 10 then
+				txt_set(txt_vor_2_dme, "DME "..string.format("0%.1f", vor2_dme))
+			else
+				txt_set(txt_vor_2_dme, "DME "..string.format("%.1f", vor2_dme))
+			end
+		else
+			txt_set(txt_vor_2_id, "----")
+			txt_set(txt_vor_2_dme, "DME ---")
+		end
+
+		visible(txt_vor_1,		vor1_off_pos == 1 and irs_mode == 2)
+		visible(txt_vor_1_id,	vor1_off_pos == 1 and irs_mode == 2)
+		visible(txt_vor_1_dme,	vor1_off_pos == 1 and irs_mode == 2)
+		visible(txt_vor_2_id,	vor2_off_pos == 1 and irs_mode == 2)
+		visible(txt_vor_2_dme,	vor2_off_pos == 1 and irs_mode == 2)
+		visible(txt_vor_2,		vor2_off_pos == 1 and irs_mode == 2)
+		visible(txt_adf_1,		vor1_off_pos == -1 and irs_mode == 2)
+		visible(txt_adf_2,		vor2_off_pos == -1 and irs_mode == 2)
+
+	end
+	xpl_dataref_subscribe(	"laminar/B738/EFIS_control/capt/vor1_off_pos", "INT",
+							"laminar/B738/EFIS_control/capt/vor2_off_pos", "INT",
+							"laminar/B738/pfd/vor1_sel_id_fo", "STRING", --something is broken with dataref for pilot, so using FO dataref
+							"laminar/B738/pfd/vor2_sel_id_fo", "STRING", --something is broken with dataref for pilot, so using FO dataref
+							"sim/cockpit2/radios/indicators/nav1_dme_distance_nm", "FLOAT",
+							"sim/cockpit2/radios/indicators/nav2_dme_distance_nm", "FLOAT",
+							"laminar/B738/pfd/vor1_show", "INT",
+							"laminar/B738/pfd/vor1_sel_x", "FLOAT",
+							"laminar/B738/pfd/vor1_sel_y", "FLOAT",
+							"laminar/B738/pfd/vor2_show", "INT",
+							"laminar/B738/pfd/vor2_sel_x", "FLOAT",
+							"laminar/B738/pfd/vor2_sel_y", "FLOAT",
+							"laminar/B738/pfd/vor1_line_show", "INT",
+							"laminar/B738/pfd/vor1_sel_crs", "STRING",
+							"laminar/B738/pfd/vor1_sel_bcrs", "STRING",
+							"laminar/B738/pfd/vor2_line_show", "INT",
+							"laminar/B738/pfd/vor2_sel_crs", "STRING",
+							"laminar/B738/pfd/vor2_sel_bcrs", "STRING",
+							"sim/cockpit2/gauges/indicators/ground_track_mag_pilot", "FLOAT",
+							"laminar/B738/irs/irs_mode", "INT",
+							vor_adf)
+				
 
 	function airports (EFIS_airport_on, apt_x, apt_y, apt_id0,apt_id1,apt_id2,apt_id3,apt_id4,apt_id5,apt_id6,apt_id7,apt_id8,apt_id9,apt_id10,apt_id11,apt_id12,apt_id13,apt_id14,apt_id15,apt_id16,apt_id17,apt_id18,apt_id19,apt_id20,apt_id21,apt_id22,apt_id23,apt_id24,apt_id25,apt_id26,apt_id27,apt_id28,apt_id29)
 
@@ -11,32 +123,28 @@ function lib_efis_functions()
 		local apt_img_array = {img_airport_circle0,img_airport_circle1,img_airport_circle2,img_airport_circle3,img_airport_circle4,img_airport_circle5,img_airport_circle6,img_airport_circle7,img_airport_circle8,img_airport_circle9,img_airport_circle10,img_airport_circle11,img_airport_circle12,img_airport_circle13,img_airport_circle14,img_airport_circle15,img_airport_circle16,img_airport_circle17,img_airport_circle18,img_airport_circle19,img_airport_circle20,img_airport_circle21,img_airport_circle22,img_airport_circle23,img_airport_circle24,img_airport_circle25,img_airport_circle26,img_airport_circle27,img_airport_circle28,img_airport_circle29}
 		
 		visible(txt_arpt,	EFIS_airport_on == 1)
-		
-		local my_x = 400 - (21 / 2)
-		local my_y = 641.36 - (21 / 2)
-
-		for i = 1, 30 do
-			txt_set(apt_txt[i], apt_txt_value[i])
-		end
 			
 		if EFIS_airport_on == 1 then
 			for i = 1, 30 do
 				if apt_txt_value[i] ~= "" then
+					txt_set(apt_txt[i], apt_txt_value[i])
 					visible(apt_img_array[i], true)
 					visible(apt_txt[i],true)
-					move(apt_img_array[i], my_x + ((apt_x[i] * 100) / 1.75), my_y - ((apt_y[i] * 100) / 1.75) , nil,nil)
-					move(apt_txt[i], my_x + (((apt_x[i] * 100) / 1.75) + 30), my_y - (((apt_y[i] * 100) / 1.75) - 25) , nil,nil)
+					move(apt_img_array[i], get_x_px(apt_x[i], 21, 0), get_y_px(apt_y[i], 21, 0) , nil,nil)
+					move(apt_txt[i], get_x_px(apt_x[i], 21, 30), get_y_px(apt_y[i], 21, 25) , nil,nil)
 				else
+					txt_set(apt_txt[i], apt_txt_value[i])
 					visible(apt_img_array[i],false)
 					visible(apt_txt[i],false)
 				end
 			end
 		else
 			for i = 1, 30 do
+				--txt_set(apt_txt[i], apt_txt_value[i])
 				visible(apt_img_array[i],false)
 				visible(apt_txt[i],false)
 			end
-		end
+		end	
 	end
 	xpl_dataref_subscribe("laminar/B738/EFIS/EFIS_airport_on", "INT",
 						  "laminar/B738/nd/apt_x", "FLOAT[30]",						
@@ -87,24 +195,27 @@ function lib_efis_functions()
 		local my_x = 400 - (21 / 2)
 		local my_y = 641.36 - (21 / 2)
 
-		for i = 1, 50 do
-			txt_set(sta_txt[i], sta_txt_value[i])
-		end
+		--for i = 1, 50 do
+		--	txt_set(sta_txt[i], sta_txt_value[i])
+		--end
 		
 		if EFIS_vor_on == 1 then
 			for i = 1, 50 do
 				if sta_txt_value[i] ~= "" then
+					txt_set(sta_txt[i], sta_txt_value[i])
 					visible(vortac_cyan[i], true)
 					visible(sta_txt[i],true)
-					move(vortac_cyan[i], my_x + ((obj_x[i] * 100) / 1.75), my_y - ((obj_y[i] * 100) / 1.75) , nil,nil)
-					move(sta_txt[i], my_x + (((obj_x[i] * 100) / 1.75) + 35), my_y - (((obj_y[i] * 100) / 1.75) - 35) , nil,nil)
+					move(vortac_cyan[i], get_x_px(obj_x[i], 40.892, 0), get_y_px(obj_y[i], 35.414, 0) , nil,nil)
+					move(sta_txt[i], get_x_px(obj_x[i], 40.892, 35), get_y_px(obj_y[i], 35.414, 35) , nil,nil)
 				else
+					txt_set(sta_txt[i], sta_txt_value[i])
 					visible(vortac_cyan[i],false)
 					visible(sta_txt[i],false)
 				end
 			end
 		else
 			for i = 1, 50 do
+				--txt_set(sta_txt[i], sta_txt_value[i])
 				visible(vortac_cyan[i],false)
 				visible(sta_txt[i],false)
 			end

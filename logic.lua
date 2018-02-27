@@ -2,6 +2,21 @@ canvas_default_black_bg = canvas_add(0, 0, 800, 800, function()
 	_fill("black")
 end)visible(canvas_default_black_bg,true)
 
+function ypos (img_y, img_height)
+	ypix = 800 - img_y - img_height
+	return ypix
+end
+function get_x_px (x, size, txt_offset)
+	local myx = 400 - (size / 2)
+	x_px = myx + (((x * 100) / 1.75) + txt_offset)
+	return x_px
+end
+function get_y_px (y, size, txt_offset)
+	local myy = 641.36 - (size / 2)
+	y_px = myy - (((y * 100) / 1.75) - txt_offset)
+	return y_px
+end
+
 -- text
 -- airport codes
 
@@ -374,6 +389,9 @@ img_vortac_cyan47 =				    img_add("img_vortac_cyan.png", -100, -100, 40.892, 35
 img_vortac_cyan48 =				    img_add("img_vortac_cyan.png", -100, -100, 40.892, 35.414)               visible(img_vortac_cyan48,false)
 img_vortac_cyan49 =				    img_add("img_vortac_cyan.png", -100, -100, 40.892, 35.414)               visible(img_vortac_cyan49,false)
 
+img_vortac_green1 =				    img_add("img_vortac_green.png", -100, -100, 40.892, 35.414)              visible(img_vortac_green1,false)
+img_vortac_green2 =				    img_add("img_vortac_green.png", -100, -100, 40.892, 35.414)              visible(img_vortac_green2,false)
+
 img_white_star0 =				    img_add("img_white_star.png", -100, -100, 38, 38)                		visible(img_white_star0,false)
 img_white_star1 =				    img_add("img_white_star.png", -100, -100, 38, 38)                		visible(img_white_star1,false)
 img_white_star2 =				    img_add("img_white_star.png", -100, -100, 38, 38)                		visible(img_white_star2,false)
@@ -620,10 +638,16 @@ img_tcas_arrow_dn_amber18 =			img_add("img_tcas_arrow_dn_amber.png", -100, -100,
 img_tcas_arrow_dn_amber19 =			img_add("img_tcas_arrow_dn_amber.png", -100, -100, 16.347, 28.773)						visible(img_tcas_arrow_dn_amber19,false)
 
 
-img_triangle =						img_add("img_triangle.png", 374.5, 639, 50, 61)							visible(img_triangle,false)
-img_tfc_ring =						img_add("img_tfc_ring.png", 352.500, 593.861, 95, 95)					visible(img_tfc_ring,false)
+img_triangle =						img_add("img_triangle.png", 374.5, ypos(100, 61),50, 61)				visible(img_triangle,false)
+img_tfcring_5nm =					img_add("img_tfcring_5nm.png", 54.189, 295.549, 691.622, 691.622)		visible(img_tfcring_5nm,false)
+img_tfcring_10nm =					img_add("img_tfcring_10nm.png", 54.189, 295.549, 691.622, 691.622)		visible(img_tfcring_10nm,false)
+img_tfcring_20nm =					img_add("img_tfcring_20nm.png", 54.189, 295.549, 691.622, 691.622)		visible(img_tfcring_20nm,false)
+img_tfcring_40nm =					img_add("img_tfcring_40nm.png", 54.189, 295.549, 691.622, 691.622)		visible(img_tfcring_40nm,false)
+img_tfcring_80nm =					img_add("img_tfcring_80nm.png", 54.189, 295.549, 691.622, 691.622)		visible(img_tfcring_80nm,false)
 img_compass_rose_no_text =			img_add("img_compass_rose_no_text.png", -162.500, 78.86, 1125, 1125)	visible(img_compass_rose_no_text,false)
 img_compass_text =					img_add("img_compass_text.png", -162.500, 78.86, 1125, 1125)			visible(img_compass_text,false)
+img_crs_line1 = 					img_add("img_crs_line.png", -200, 0, 3, 2000)							visible(img_crs_line1,false)
+img_crs_line2 = 					img_add("img_crs_line.png", -200, 0, 3, 2000)							visible(img_crs_line2,false)
 
 img_top_mask =						img_add("img_top_mask.png", 0, 0, 800, 800)								visible(img_top_mask,false) -- mask for the top
 
@@ -663,29 +687,45 @@ canvas_efis_range = canvas_add(342, 325, 50, 26, function()
 	_fill("black")
 end)visible(canvas_efis_range,false)
 
-canvas_vor1 = canvas_add(0, 680 , 120, 120, function() --created a black box bottom left corner behind VOR1 etc
+canvas_vor1 = canvas_add(0, 700 , 120, 100, function() --created a black box bottom left corner behind VOR1 etc
 	_fill("black")
 end)visible(canvas_vor1,true)
 
-canvas_vor2 = canvas_add(680, 680 , 120, 120, function() --created a black box bottom left corner behind VOR2 etc
+canvas_vor2 = canvas_add(680, 680 , 120, 100, function() --created a black box bottom left corner behind VOR2 etc
 	_fill("black")
 end)visible(canvas_vor2,true)
 
-txt_vor_1 =							txt_add("VOR 1", "size:24px; font:my737glass.otf; color:lime; halign:left;", 10, 690, 500, 24) 	visible(txt_vor_1,false)
-txt_vor_2 =							txt_add("VOR 2", "size:24px; font:my737glass.otf; color:lime; halign:left;", 695, 690, 100, 24) visible(txt_vor_2,false)
-txt_efis_range =					txt_add(" ", "size:22px; font:my737glass.otf; color:white; halign:right;", 342, 325, 50, 26) 	visible(txt_efis_range,false)
-txt_fpln_nav =						txt_add(" ", "size:24px; font:my737glass.otf; color:magenta; halign:left;", 680, 0, 120, 50) 	visible(txt_fpln_nav,false)
-txt_id_eta =						txt_add(" ", "size:22px; font:my737glass.otf; color:white; halign:right;", 650, 28, 80, 50) 	visible(txt_id_eta,false)
-txt_id_eta_small =					txt_add("Z", "size:16px; font:my737glass.otf; color:white; halign:left;", 730, 34, 120, 50) 	visible(txt_id_eta_small,false)
-txt_lnav_dist_next =				txt_add(" ", "size:22px; font:my737glass.otf; color:white; halign:right;", 650, 54, 80, 50) 	visible(txt_lnav_dist_next,false)
-txt_lnav_dist_next_small =			txt_add("NM", "size:18px; font:my737glass.otf; color:white; halign:left;", 730, 58, 40, 50) 	visible(txt_lnav_dist_next_small,false)
+canvas_tfc = canvas_add(0, ypos(35, 100) , 100, 100, function() --created a black box bottom left corner behind VOR1 etc
+	_fill("black")
+end)visible(canvas_tfc,true)
+
+txt_vor_1 =							txt_add("VOR 1", "size:24px; font:my737glass.otf; color:lime; halign:left;", 10, 710, 500, 24) 		visible(txt_vor_1,false)
+txt_vor_1_id =						txt_add(" ", "size:24px; font:my737glass.otf; color:lime; halign:left;", 10, 710 + 25, 500, 24) 	visible(txt_vor_1_id,false)
+txt_vor_1_dme =						txt_add(" ", "size:20px; font:my737glass.otf; color:lime; halign:left;", 10, 710 + 50, 500, 24) 	visible(txt_vor_1_dme,false)
+txt_vor1_bcrs =						txt_add(" ", "size:20px; font:my737glass.otf; color:lime; halign:right;", -300, -300, 200, 60) 		visible(txt_vor1_bcrs,false)
+txt_vor1_crs =						txt_add(" ", "size:20px; font:my737glass.otf; color:lime; halign:left;", -300, -300, 200, 60) 		visible(txt_vor1_crs,false)
+txt_vortac_green1 =					txt_add(" ", "size:20px; font:my737glass.otf; color:lime; halign:left;", -100, -100, 80, 22) 		visible(txt_vortac_green1,false)
+txt_vortac_green2 =					txt_add(" ", "size:20px; font:my737glass.otf; color:lime; halign:left;", -100, -100, 80, 22) 		visible(txt_vortac_green2,false)
+txt_vor_2 =							txt_add("VOR 2", "size:24px; font:my737glass.otf; color:lime; halign:left;", 695, 710, 100, 24) 	visible(txt_vor_2,false)
+txt_vor_2_id =						txt_add(" ", "size:24px; font:my737glass.otf; color:lime; halign:left;", 695, 710 + 25, 500, 24) 	visible(txt_vor_2_id,false)
+txt_vor_2_dme =						txt_add(" ", "size:20px; font:my737glass.otf; color:lime; halign:left;", 695, 710 + 50, 500, 24) 	visible(txt_vor_2_dme,false)
+txt_vor2_bcrs =						txt_add(" ", "size:20px; font:my737glass.otf; color:lime; halign:right;", -300, -300, 200, 60) 		visible(txt_vor2_bcrs,false)
+txt_vor2_crs =						txt_add(" ", "size:20px; font:my737glass.otf; color:lime; halign:left;", -300, -300, 200, 60) 		visible(txt_vor2_crs,false)
+txt_adf_1 =							txt_add("ADF 1", "size:24px; font:my737glass.otf; color:cyan; halign:left;", 10, 710, 500, 24) 		visible(txt_adf_1,false)
+txt_adf_2 =							txt_add("ADF 2", "size:24px; font:my737glass.otf; color:cyan; halign:left;", 695, 710, 100, 24) 	visible(txt_adf_2,false)
+txt_efis_range =					txt_add(" ", "size:22px; font:my737glass.otf; color:white; halign:right;", 342, 325, 50, 26) 		visible(txt_efis_range,false)
+txt_fpln_nav =						txt_add(" ", "size:24px; font:my737glass.otf; color:magenta; halign:left;", 680, 0, 120, 50) 		visible(txt_fpln_nav,false)
+txt_id_eta =						txt_add(" ", "size:22px; font:my737glass.otf; color:white; halign:right;", 650, 28, 80, 50) 		visible(txt_id_eta,false)
+txt_id_eta_small =					txt_add("Z", "size:16px; font:my737glass.otf; color:white; halign:left;", 730, 34, 120, 50) 		visible(txt_id_eta_small,false)
+txt_lnav_dist_next =				txt_add(" ", "size:22px; font:my737glass.otf; color:white; halign:right;", 650, 54, 80, 50) 		visible(txt_lnav_dist_next,false)
+txt_lnav_dist_next_small =			txt_add("NM", "size:18px; font:my737glass.otf; color:white; halign:left;", 730, 58, 40, 50) 		visible(txt_lnav_dist_next_small,false)
 
 txt_arpt =							txt_add("ARPT", "size:18px; font:my737glass.otf; color:cyan; halign:left;", 10, 500, 150, 50) 		visible(txt_arpt,false)
 txt_wpt =							txt_add("WPT", "size:18px; font:my737glass.otf; color:cyan; halign:left;", 10, 520, 150, 50) 		visible(txt_wpt,false)
 txt_sta =							txt_add("STA", "size:18px; font:my737glass.otf; color:cyan; halign:left;", 10, 540, 150, 50) 		visible(txt_sta,false)
-txt_tcas_off1 =						txt_add("TCAS", "size:18px; font:my737glass.otf; color:#FFAE2A; halign:left;", 10, 650, 150, 50) 	visible(txt_tcas_off1,false)
-txt_tcas_off2 =						txt_add("OFF", "size:18px; font:my737glass.otf; color:#FFAE2A; halign:left;", 10, 670, 150, 50) 	visible(txt_tcas_off2,false)
-txt_tcas =							txt_add(" ", "size:18px; font:my737glass.otf; color:cyan; halign:left;", 10, 650, 150, 50) 			visible(txt_tcas,false)
+txt_tcas_off1 =						txt_add("TCAS", "size:18px; font:my737glass.otf; color:#FFAE2A; halign:left;", 10, 670, 150, 50) 	visible(txt_tcas_off1,false)
+txt_tcas_off2 =						txt_add("OFF", "size:18px; font:my737glass.otf; color:#FFAE2A; halign:left;", 10, 690, 150, 50) 	visible(txt_tcas_off2,false)
+txt_tcas =							txt_add(" ", "size:18px; font:my737glass.otf; color:cyan; halign:left;", 10, 670, 150, 50) 			visible(txt_tcas,false)
 
 --groups
 wind_speed_direction = group_add(txt_wind_heading, txt_wind_speed, img_wind_arrow)
@@ -710,8 +750,6 @@ function general_nd (nd_mode, irs_mode, wind_heading, wind_speed, hdg_bug_line, 
 	visible(txt_trk_hdg,					nd_mode == 2 and irs_mode == 2)
 	visible(txt_gs,							irs_mode == 2)
 	visible(txt_tas,						irs_mode == 2)
-	visible(txt_vor_1,						irs_mode == 2)
-	visible(txt_vor_2,						irs_mode == 2)
 	visible(txt_hdg_failure_flag,			irs_mode ~= 2)
 	visible(txt_map_failure_flag,			irs_mode ~= 2)
 	visible(hdg_failure_flag_box,			irs_mode ~= 2) -- could use more logic instead of just going away when irs is aligned
