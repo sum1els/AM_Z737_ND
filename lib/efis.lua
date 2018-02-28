@@ -4,7 +4,17 @@
 	
 function lib_efis_functions()
 
+
+
+
 	function vor_adf (vor1_off_pos, vor2_off_pos, vor1_sel_id, vor2_sel_id, vor1_dme, vor2_dme, vor1_show, vor1_sel_x, vor1_sel_y, vor2_show, vor2_sel_x, vor2_sel_y, vor1_line_show, vor1_sel_crs, vor1_sel_bcrs, vor2_line_show, vor2_sel_crs, vor2_sel_bcrs, track_mag_pilot, current_heading, vor1_arrow, irs_mode)
+
+		if vor1_sel_bcrs == "" then 
+			vor1_sel_bcrs = "0"
+		end
+		if vor2_sel_bcrs == "" then 
+			vor2_sel_bcrs = "0"	
+		end
 		--
 		--VOR2 seems a little buggy in ZiboMod datarefs, so expect some weird behavior
 		--
@@ -127,7 +137,8 @@ function lib_efis_functions()
 
 		local apt_img_array = {img_airport_circle0,img_airport_circle1,img_airport_circle2,img_airport_circle3,img_airport_circle4,img_airport_circle5,img_airport_circle6,img_airport_circle7,img_airport_circle8,img_airport_circle9,img_airport_circle10,img_airport_circle11,img_airport_circle12,img_airport_circle13,img_airport_circle14,img_airport_circle15,img_airport_circle16,img_airport_circle17,img_airport_circle18,img_airport_circle19,img_airport_circle20,img_airport_circle21,img_airport_circle22,img_airport_circle23,img_airport_circle24,img_airport_circle25,img_airport_circle26,img_airport_circle27,img_airport_circle28,img_airport_circle29}
 		
-		visible(txt_arpt,	EFIS_airport_on == 1)
+		visible(txt_arpt,		EFIS_airport_on == 1)
+		visible(canvas_arpt,	EFIS_airport_on == 1)
 			
 		if EFIS_airport_on == 1 then
 			for i = 1, 30 do
@@ -195,7 +206,8 @@ function lib_efis_functions()
 		
 		local vortac_cyan = {img_vortac_cyan0, img_vortac_cyan1, img_vortac_cyan2, img_vortac_cyan3, img_vortac_cyan4, img_vortac_cyan5, img_vortac_cyan6, img_vortac_cyan7, img_vortac_cyan8, img_vortac_cyan9, img_vortac_cyan10, img_vortac_cyan11, img_vortac_cyan12, img_vortac_cyan13, img_vortac_cyan14, img_vortac_cyan15, img_vortac_cyan16, img_vortac_cyan17, img_vortac_cyan18, img_vortac_cyan19, img_vortac_cyan20, img_vortac_cyan21, img_vortac_cyan22, img_vortac_cyan23, img_vortac_cyan24, img_vortac_cyan25, img_vortac_cyan26, img_vortac_cyan27, img_vortac_cyan28, img_vortac_cyan29, img_vortac_cyan30, img_vortac_cyan31, img_vortac_cyan32, img_vortac_cyan33, img_vortac_cyan34, img_vortac_cyan35, img_vortac_cyan36, img_vortac_cyan37, img_vortac_cyan38, img_vortac_cyan39, img_vortac_cyan40, img_vortac_cyan41, img_vortac_cyan42, img_vortac_cyan43, img_vortac_cyan44, img_vortac_cyan45, img_vortac_cyan46, img_vortac_cyan47, img_vortac_cyan48, img_vortac_cyan49}
 
-		visible(txt_sta,	EFIS_vor_on == 1)
+		visible(txt_sta,		EFIS_vor_on == 1)
+		visible(canvas_sta,		EFIS_vor_on == 1)
 		
 		local my_x = 400 - (21 / 2)
 		local my_y = 641.36 - (21 / 2)
