@@ -4,7 +4,7 @@
 	
 function lib_efis_functions()
 
-	function vor_adf (vor1_off_pos, vor2_off_pos, vor1_sel_id, vor2_sel_id, vor1_dme, vor2_dme, vor1_show, vor1_sel_x, vor1_sel_y, vor2_show, vor2_sel_x, vor2_sel_y, vor1_line_show, vor1_sel_crs, vor1_sel_bcrs, vor2_line_show, vor2_sel_crs, vor2_sel_bcrs, track_mag_pilot, irs_mode)
+	function vor_adf (vor1_off_pos, vor2_off_pos, vor1_sel_id, vor2_sel_id, vor1_dme, vor2_dme, vor1_show, vor1_sel_x, vor1_sel_y, vor2_show, vor2_sel_x, vor2_sel_y, vor1_line_show, vor1_sel_crs, vor1_sel_bcrs, vor2_line_show, vor2_sel_crs, vor2_sel_bcrs, track_mag_pilot, current_heading, vor1_arrow, irs_mode)
 		--
 		--VOR2 seems a little buggy in ZiboMod datarefs, so expect some weird behavior
 		--
@@ -59,6 +59,8 @@ function lib_efis_functions()
 		
 		if vor1_dme > 0 then
 			txt_set(txt_vor_1_id, vor1_sel_id)
+				visible(img_vor1_arrow,true)
+				img_rotate(img_vor1_arrow, track_mag_pilot - track_mag_pilot + vor1_arrow)
 				if vor1_dme < 10 then
 					txt_set(txt_vor_1_dme, "DME "..string.format("0%.1f", vor1_dme))
 				else
@@ -67,6 +69,7 @@ function lib_efis_functions()
 		else
 			txt_set(txt_vor_1_id, "----")
 			txt_set(txt_vor_1_dme, "DME ---")
+			visible(img_vor1_arrow,false)
 		end
 		
 		if vor2_dme > 0 then
@@ -110,6 +113,8 @@ function lib_efis_functions()
 							"laminar/B738/pfd/vor2_sel_crs", "STRING",
 							"laminar/B738/pfd/vor2_sel_bcrs", "STRING",
 							"sim/cockpit2/gauges/indicators/ground_track_mag_pilot", "FLOAT",
+							"sim/cockpit2/gauges/indicators/heading_AHARS_deg_mag_pilot", "FLOAT",
+							"laminar/B738/pfd/vor1_arrow", "FLOAT",
 							"laminar/B738/irs/irs_mode", "INT",
 							vor_adf)
 				

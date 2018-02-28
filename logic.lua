@@ -668,6 +668,7 @@ img_track_box =						img_add("img_track_box.png", 350, 0, 100, 78.756)				visibl
 img_magenta_hdg_bug =				img_add("img_magenta_hdg_bug.png", 382.5, 60.29, 35, 1161.143)			visible(img_magenta_hdg_bug,false)
 img_magenta_line =					img_add("img_magenta_line.png", 398.500, 77.862, 3, 1127)				visible(img_magenta_line,false)
 img_range_markers =					img_add("img_range_markers.png", 390.972, 219.15, 18.057, 280.900)		visible(img_range_markers,false)
+img_vor1_arrow =					img_add("img_vor1_arrow.png", 387.760, 65.513, 24.398, 1151.867)				visible(img_vor1_arrow,false)
 
 
 --failure flags
