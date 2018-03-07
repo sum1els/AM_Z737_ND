@@ -6,11 +6,11 @@ function lib_tcas ()
 	
 		visible(txt_tcas_warning_a,			traffic_ta == 1)
 		visible(txt_tcas_warning_r,			traffic_ra == 1)
-		visible(img_tfcring_5nm,			tcas_on == 1 and map_range == 0)
-		visible(img_tfcring_10nm,			tcas_on == 1 and map_range == 1)
-		visible(img_tfcring_20nm,			tcas_on == 1 and map_range == 2)
-		visible(img_tfcring_40nm,			tcas_on == 1 and map_range == 3)
-		visible(img_tfcring_80nm,			tcas_on == 1 and map_range == 4)
+		visible(img_tfcring_5nm,			tcas_on == 1 and map_range == 0 and  irs_aligned)
+		visible(img_tfcring_10nm,			tcas_on == 1 and map_range == 1 and  irs_aligned)
+		visible(img_tfcring_20nm,			tcas_on == 1 and map_range == 2 and  irs_aligned)
+		visible(img_tfcring_40nm,			tcas_on == 1 and map_range == 3 and  irs_aligned)
+		visible(img_tfcring_80nm,			tcas_on == 1 and map_range == 4 and  irs_aligned)
 		
 		if transponder_pos == 0 then
 			txt_set(txt_tcas, "TCAS TEST")

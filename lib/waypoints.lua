@@ -4,8 +4,6 @@ function lib_waypoints()
 
 	function show_runway (ils_x0, ils_y0, ils_rotate0, ils_show0, ils_runway0, map_range)
 	
-	
-		
 		move(img_runway, get_x_px(ils_x0, 110, 0), get_y_px(ils_y0, 17, 0), nil,nil)
 		move(img_runway_centerline5, get_x_px(ils_x0, 1600.397, 0), get_y_px(ils_y0, 3, 0), nil,nil)
 		move(img_runway_centerline10, get_x_px(ils_x0, 800.198, 0), get_y_px(ils_y0, 3, 0), nil,nil)

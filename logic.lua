@@ -766,7 +766,9 @@ wind_speed_direction = group_add(txt_wind_heading, txt_wind_speed, img_wind_arro
 
 magenta_lines = canvas_add(0, 0, 800, 800)
 
-function general_nd (nd_mode, irs_mode, wind_heading, wind_speed, hdg_bug_line, true_airspeed, groundspeed, track_mag_pilot, mcp_hdg_dial, current_heading, map_range, fmc_source, rnp, anp) 
+function general_nd (nd_mode, irs_mode, wind_heading, wind_speed, hdg_bug_line, true_airspeed, groundspeed, track_mag_pilot, mcp_hdg_dial, current_heading, map_range, fmc_source, rnp, anp)
+
+	if irs_mode == 2 then irs_aligned = true else irs_aligned = false end
 	
 	visible(img_triangle,					nd_mode ~= 3) --Airplane symbol (W) MAP, MAP CTR,VOR,APP 
 	visible(img_compass_rose_no_text,		nd_mode ~= 3) --Expanded compass (W)
@@ -918,27 +920,28 @@ lib_efis_functions()
 lib_waypoints()	
 lib_tcas ()				  
 						
-black_bg_no_power = canvas_add(0, 0, 800, 800, function() --black canvas over everything to simulate displays that are off
-	_fill("black")
-end)
-fade = canvas_add(0, 0, 800, 800, function() --black canvas for fading instrument
+fade = canvas_add(0, 0, 800, 800, function() --black canvas for fading instrument and black when no power
 	_fill("black")
 end)visible(fade,true)
 
 function pwr_callback(instrument_brightness, batbus_status)
 
-	visible(black_bg_no_power, 	batbus_status == 0) -- blank displays if no power, probably needs to check for more stuff here than just batbus_status
-	local x = 1 - instrument_brightness[3] -- fades the ND
-	opacity(fade, x)
+	if batbus_status == 1 then
+		local x = 1 - instrument_brightness[3]
+		opacity(fade, x)
+	else
+		opacity(fade, 1)
+	end
 
 end
 xpl_dataref_subscribe(	"laminar/B738/electric/instrument_brightness", "FLOAT[16]",
-						"laminar/B738/electric/batbus_status", "INT", pwr_callback)
+						"laminar/B738/electric/batbus_status", "INT",
+						pwr_callback)
 
 
 --TO DOs
 
---laminar/B738/pfd/ils_rotate0
+--laminar/B738/pfd/ils_rotate0, needs more work
 --laminar/B738/nd/tc_x
 --laminar/B738/nd/tc_y -- top of climb position
 --laminar/B738/nd/td_x
@@ -947,7 +950,6 @@ xpl_dataref_subscribe(	"laminar/B738/electric/instrument_brightness", "FLOAT[16]
 --laminar/B738/EFIS/green_arc_show
 --finish vors
 --finish efis text
---fix NM if greater 100, no decimal, alignment
 -- flightplan stuff
 -- WPTs added to display
 -- how to display weather and terrain ??????
