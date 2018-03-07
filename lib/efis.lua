@@ -77,7 +77,7 @@ function lib_efis_functions()
 		else
 			txt_set(txt_vor_1_id, "----")
 			txt_set(txt_vor_1_dme, "DME ---")
-			visible(img_vor1_arrow,true)
+			visible(img_vor1_arrow,false)
 		end
 		
 		
@@ -138,9 +138,9 @@ function lib_efis_functions()
 		local apt_txt_value = {apt_id0,apt_id1,apt_id2,apt_id3,apt_id4,apt_id5,apt_id6,apt_id7,apt_id8,apt_id9,apt_id10,apt_id11,apt_id12,apt_id13,apt_id14,apt_id15,apt_id16,apt_id17,apt_id18,apt_id19,apt_id20,apt_id21,apt_id22,apt_id23,apt_id24,apt_id25,apt_id26,apt_id27,apt_id28,apt_id29}
 
 		local apt_txt = {txt_apt0, txt_apt1, txt_apt2, txt_apt3, txt_apt4, txt_apt5, txt_apt6, txt_apt7, txt_apt8, txt_apt9, txt_apt10, txt_apt11, txt_apt12,txt_apt13, txt_apt14,txt_apt15,txt_apt16,txt_apt17,txt_apt18,txt_apt19,txt_apt20,txt_apt21,txt_apt22,txt_apt22,txt_apt23,txt_apt24,txt_apt25,txt_apt26,txt_apt27,txt_apt28,txt_apt29}
-
-		local apt_img_array = {img_airport_circle0,img_airport_circle1,img_airport_circle2,img_airport_circle3,img_airport_circle4,img_airport_circle5,img_airport_circle6,img_airport_circle7,img_airport_circle8,img_airport_circle9,img_airport_circle10,img_airport_circle11,img_airport_circle12,img_airport_circle13,img_airport_circle14,img_airport_circle15,img_airport_circle16,img_airport_circle17,img_airport_circle18,img_airport_circle19,img_airport_circle20,img_airport_circle21,img_airport_circle22,img_airport_circle23,img_airport_circle24,img_airport_circle25,img_airport_circle26,img_airport_circle27,img_airport_circle28,img_airport_circle29}
 		
+		local apt_img_array = {img_airport_circle0,img_airport_circle1,img_airport_circle2,img_airport_circle3,img_airport_circle4,img_airport_circle5,img_airport_circle6,img_airport_circle7,img_airport_circle8,img_airport_circle9,img_airport_circle10,img_airport_circle11,img_airport_circle12,img_airport_circle13,img_airport_circle14,img_airport_circle15,img_airport_circle16,img_airport_circle17,img_airport_circle18,img_airport_circle19,img_airport_circle20,img_airport_circle21,img_airport_circle22,img_airport_circle23,img_airport_circle24,img_airport_circle25,img_airport_circle26,img_airport_circle27,img_airport_circle28,img_airport_circle29}
+
 		visible(txt_arpt,		EFIS_airport_on == 1)
 		visible(canvas_arpt,	EFIS_airport_on == 1)
 			
@@ -167,10 +167,10 @@ function lib_efis_functions()
 		end	
 	end
 	xpl_dataref_subscribe("laminar/B738/EFIS/EFIS_airport_on", "INT",
-						  "laminar/B738/nd/apt_x", "FLOAT[30]",						
-						  "laminar/B738/nd/apt_y", "FLOAT[30]",						
-						  "laminar/B738/nd/apt_id00", "STRING",					
-						  "laminar/B738/nd/apt_id01", "STRING",		
+						  "laminar/B738/nd/apt_x", "FLOAT[30]",
+						  "laminar/B738/nd/apt_y", "FLOAT[30]",
+						  "laminar/B738/nd/apt_id00", "STRING",
+						  "laminar/B738/nd/apt_id01", "STRING",
 						  "laminar/B738/nd/apt_id02", "STRING",
 						  "laminar/B738/nd/apt_id03", "STRING",
 						  "laminar/B738/nd/apt_id04", "STRING",

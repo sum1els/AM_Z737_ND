@@ -6,7 +6,7 @@ function lib_waypoints()
 	
 	
 		
-		move(img_runway, get_x_px(ils_x0, 120, 0), get_y_px(ils_y0, 17, 0), nil,nil)
+		move(img_runway, get_x_px(ils_x0, 110, 0), get_y_px(ils_y0, 17, 0), nil,nil)
 		move(img_runway_centerline5, get_x_px(ils_x0, 1600.397, 0), get_y_px(ils_y0, 3, 0), nil,nil)
 		move(img_runway_centerline10, get_x_px(ils_x0, 800.198, 0), get_y_px(ils_y0, 3, 0), nil,nil)
 		move(img_runway_centerline20, get_x_px(ils_x0, 400.099, 0), get_y_px(ils_y0, 3, 0), nil,nil)
@@ -93,7 +93,7 @@ function lib_waypoints()
 		for i = 1, legs_num2 + 1 do
 			txt_set(txt_wptm[i], txt_magenta_wpt_value[i])
 		end
-		
+
 		for i = 1, 20 do
 			if txt_magenta_wpt_value[i] ~= "" then
 				visible(magenta_star[i], true)
@@ -103,6 +103,7 @@ function lib_waypoints()
 			else
 				visible(magenta_star[i],false)
 				visible(txt_wptm[i],false)
+				
 			end
 		end
 

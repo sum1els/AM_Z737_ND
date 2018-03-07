@@ -674,7 +674,8 @@ img_magenta_line =					img_add("img_magenta_line.png", 398.500, 77.862, 3, 1127)
 img_range_markers =					img_add("img_range_markers.png", 390.972, 219.15, 18.057, 280.900)				visible(img_range_markers,false)
 img_vor1_arrow =					img_add("img_vor1_arrow.png", 387.760, 65.513, 24.398, 1151.867)				visible(img_vor1_arrow,false)
 img_vor2_arrow =					img_add("img_vor2_arrow.png", 384.768, 65.196, 30.502, 1157.460)				visible(img_vor2_arrow,false)
-img_runway =						img_add("img_runway.png", -100,-100, 120, 17)									visible(img_runway,false)
+img_runway =						img_add("img_runway.png", -100,-100, 110, 17)									visible(img_runway,false)
+--img_cyan_dash_line = 				img_add("img_cyan_dash_line.png", 400,641, 2000, 3)								visible(img_cyan_dash_line,true)
 
 
 --failure flags
@@ -763,7 +764,7 @@ txt_anp_value_amber =				txt_add(" ", "size:18px; font:my737glass.otf; color:#FF
 --groups
 wind_speed_direction = group_add(txt_wind_heading, txt_wind_speed, img_wind_arrow)
 
-cyan_lines = canvas_add(0, 0, 800, 800)
+magenta_lines = canvas_add(0, 0, 800, 800)
 
 function general_nd (nd_mode, irs_mode, wind_heading, wind_speed, hdg_bug_line, true_airspeed, groundspeed, track_mag_pilot, mcp_hdg_dial, current_heading, map_range, fmc_source, rnp, anp) 
 	
