@@ -8,12 +8,12 @@ function ypos (img_y, img_height)
 end
 function get_x_px (x, size, txt_offset)
 	local myx = 400 - (size / 2)
-	x_px = myx + (((x * 100) / 1.75) + txt_offset)
+	x_px = myx + (((x * 100) / 1.768) + txt_offset)
 	return x_px
 end
 function get_y_px (y, size, txt_offset)
 	local myy = 641.36 - (size / 2)
-	y_px = myy - (((y * 100) / 1.75) - txt_offset)
+	y_px = myy - (((y * 100) / 1.786) - txt_offset)
 	return y_px
 end
 
@@ -648,6 +648,10 @@ img_compass_rose_no_text =			img_add("img_compass_rose_no_text.png", -162.500, 7
 img_compass_text =					img_add("img_compass_text.png", -162.500, 78.86, 1125, 1125)			visible(img_compass_text,false)
 img_crs_line1 = 					img_add("img_crs_line.png", -200, 0, 3, 2000)							visible(img_crs_line1,false)
 img_crs_line2 = 					img_add("img_crs_line.png", -200, 0, 3, 2000)							visible(img_crs_line2,false)
+img_runway_centerline5 =			img_add("img_runway_centerline5.png", -100,-100, 1600.397, 3)					visible(img_runway_centerline5,false)
+img_runway_centerline10 =			img_add("img_runway_centerline10.png", -100,-100, 800.198, 3)					visible(img_runway_centerline10,false)
+img_runway_centerline20 = 			img_add("img_runway_centerline20.png", -100,-100, 400.099, 3)					visible(img_runway_centerline20,false)
+img_runway_centerline40 =			img_add("img_runway_centerline40.png", -100,-100, 200.050, 3)					visible(img_runway_centerline40,false)
 
 img_top_mask =						img_add("img_top_mask.png", 0, 0, 800, 800)								visible(img_top_mask,false) -- mask for the top
 
@@ -658,17 +662,19 @@ txt_tas =							txt_add("TAS", "size:20px; font:my737glass.otf; color:white; hal
 txt_tas_value =						txt_add(" ", "size:28px; font:my737glass.otf; color:white; halign:left;", 133, 2, 100, 31) visible(txt_tas_value,false)
 txt_wind_heading =					txt_add("---", "size:28px; font:my737glass.otf; color:white; halign:left;", 5, 35, 70, 31) visible(txt_wind_heading,false)
 txt_wind_speed =					txt_add("---", "size:28px; font:my737glass.otf; color:white; halign:left;", 75, 35, 60, 31) visible(txt_wind_speed,false)
-img_wind_arrow =					img_add("img_wind_arrow.png", 40, 75, 13.345, 61.415)	visible(img_wind_arrow,false)
+img_wind_arrow =					img_add("img_wind_arrow.png", 40, 75, 13.345, 61.415)							visible(img_wind_arrow,false)
 txt_trk_hdg =						txt_add(" ", "size:38px; font:my737glass.otf; color:white; halign:center;", 350, 3, 100, 39) visible(txt_trk_hdg,false)
 txt_trk_hdg_green =					txt_add(" ", "size:24px; font:my737glass.otf; color:lime; halign:right;", 245, 20, 100, 25) visible(txt_trk_hdg_green,false)
 txt_trk_hdg_mag_green =				txt_add("MAG", "size:24px; font:my737glass.otf; color:lime; halign:left;", 453, 20, 100, 25) visible(txt_trk_hdg_mag_green,false)
-img_current_hdg_bug =				img_add("img_current_hdg_bug.png", 385.558, 53.847, 28.883, 1174.029)	visible(img_current_hdg_bug,false)
-img_track_line =					img_add("img_track_line.png", 398.500, 80.861, 3, 1121.000)		visible(img_track_line,false)
-img_track_box =						img_add("img_track_box.png", 350, 0, 100, 78.756)				visible(img_track_box,false)
-img_magenta_hdg_bug =				img_add("img_magenta_hdg_bug.png", 382.5, 60.29, 35, 1161.143)			visible(img_magenta_hdg_bug,false)
-img_magenta_line =					img_add("img_magenta_line.png", 398.500, 77.862, 3, 1127)				visible(img_magenta_line,false)
-img_range_markers =					img_add("img_range_markers.png", 390.972, 219.15, 18.057, 280.900)		visible(img_range_markers,false)
+img_current_hdg_bug =				img_add("img_current_hdg_bug.png", 385.558, 53.847, 28.883, 1174.029)			visible(img_current_hdg_bug,false)
+img_track_line =					img_add("img_track_line.png", 398.500, 80.861, 3, 1121.000)						visible(img_track_line,false)
+img_track_box =						img_add("img_track_box.png", 350, 0, 100, 78.756)								visible(img_track_box,false)
+img_magenta_hdg_bug =				img_add("img_magenta_hdg_bug.png", 382.5, 60.29, 35, 1161.143)					visible(img_magenta_hdg_bug,false)
+img_magenta_line =					img_add("img_magenta_line.png", 398.500, 77.862, 3, 1127)						visible(img_magenta_line,false)
+img_range_markers =					img_add("img_range_markers.png", 390.972, 219.15, 18.057, 280.900)				visible(img_range_markers,false)
 img_vor1_arrow =					img_add("img_vor1_arrow.png", 387.760, 65.513, 24.398, 1151.867)				visible(img_vor1_arrow,false)
+img_vor2_arrow =					img_add("img_vor2_arrow.png", 384.768, 65.196, 30.502, 1157.460)				visible(img_vor2_arrow,false)
+img_runway =						img_add("img_runway.png", -100,-100, 120, 17)									visible(img_runway,false)
 
 
 --failure flags
@@ -703,6 +709,7 @@ end)visible(canvas_tfc,true)
 txt_vor_1 =							txt_add("VOR 1", "size:24px; font:my737glass.otf; color:lime; halign:left;", 10, 710, 500, 24) 		visible(txt_vor_1,false)
 txt_vor_1_id =						txt_add(" ", "size:24px; font:my737glass.otf; color:lime; halign:left;", 10, 710 + 25, 500, 24) 	visible(txt_vor_1_id,false)
 txt_vor_1_dme =						txt_add(" ", "size:20px; font:my737glass.otf; color:lime; halign:left;", 10, 710 + 50, 500, 24) 	visible(txt_vor_1_dme,false)
+txt_fmc_source =					txt_add(" ", "size:20px; font:my737glass.otf; color:lime; halign:left;", 170, 710 + 50, 500, 24) 	visible(txt_fmc_source,true)
 txt_vor1_bcrs =						txt_add(" ", "size:20px; font:my737glass.otf; color:lime; halign:right;", -300, -300, 200, 60) 		visible(txt_vor1_bcrs,false)
 txt_vor1_crs =						txt_add(" ", "size:20px; font:my737glass.otf; color:lime; halign:left;", -300, -300, 200, 60) 		visible(txt_vor1_crs,false)
 txt_vortac_green1 =					txt_add(" ", "size:20px; font:my737glass.otf; color:lime; halign:left;", -100, -100, 80, 22) 		visible(txt_vortac_green1,false)
@@ -720,7 +727,9 @@ txt_id_eta =						txt_add(" ", "size:22px; font:my737glass.otf; color:white; hal
 txt_id_eta_small =					txt_add("Z", "size:16px; font:my737glass.otf; color:white; halign:left;", 730, 34, 120, 50) 		visible(txt_id_eta_small,false)
 txt_lnav_dist_next =				txt_add(" ", "size:22px; font:my737glass.otf; color:white; halign:right;", 650, 54, 80, 50) 		visible(txt_lnav_dist_next,false)
 txt_lnav_dist_next_small =			txt_add("NM", "size:18px; font:my737glass.otf; color:white; halign:left;", 730, 58, 40, 50) 		visible(txt_lnav_dist_next_small,false)
-canvas_arpt = canvas_add(0, 500 , 50, 20, function()
+
+
+canvas_arpt = canvas_add(0, 500 , 60, 20, function()
 	_fill("black")
 end)visible(canvas_arpt,false)
 txt_arpt =							txt_add("ARPT", "size:18px; font:my737glass.otf; color:cyan; halign:left;", 10, 500, 150, 50) 		visible(txt_arpt,false)
@@ -736,12 +745,27 @@ txt_tcas_off1 =						txt_add("TCAS", "size:18px; font:my737glass.otf; color:#FFA
 txt_tcas_off2 =						txt_add("OFF", "size:18px; font:my737glass.otf; color:#FFAE2A; halign:left;", 10, 690, 150, 50) 	visible(txt_tcas_off2,false)
 txt_tcas =							txt_add(" ", "size:18px; font:my737glass.otf; color:cyan; halign:left;", 10, 670, 150, 50) 			visible(txt_tcas,false)
 
+canvas_rnp = canvas_add(340, 730 , 40, 40, function()
+	_fill("black")
+end)visible(canvas_rnp,false)
+canvas_anp = canvas_add(420, 730 , 40, 40, function()
+	_fill("black")
+end)visible(canvas_anp,false)
+txt_rnp =							txt_add("RNP", "size:18px; font:my737glass.otf; color:lime; halign:center;", 320, 730, 80, 24) 		visible(txt_rnp, false)
+txt_anp =							txt_add("ANP", "size:18px; font:my737glass.otf; color:lime; halign:center;", 400, 730, 80, 24) 		visible(txt_anp, false)
+txt_rnp_value =						txt_add(" ", "size:18px; font:my737glass.otf; color:lime; halign:center;", 320, 750, 80, 24) 		visible(txt_rnp_value, false)
+txt_anp_value =						txt_add(" ", "size:18px; font:my737glass.otf; color:lime; halign:center;", 400, 750, 80, 24) 		visible(txt_anp_value, false)
+txt_rnp_amber =						txt_add("RNP", "size:18px; font:my737glass.otf; color:#FFAE2A; halign:center;", 320, 730, 80, 24) 	visible(txt_rnp_amber, false)
+txt_anp_amber =						txt_add("ANP", "size:18px; font:my737glass.otf; color:#FFAE2A; halign:center;", 400, 730, 80, 24) 	visible(txt_anp_amber, false)
+txt_rnp_value_amber =				txt_add(" ", "size:18px; font:my737glass.otf; color:#FFAE2A; halign:center;", 320, 750, 80, 24) 	visible(txt_rnp_value_amber, false)
+txt_anp_value_amber =				txt_add(" ", "size:18px; font:my737glass.otf; color:#FFAE2A; halign:center;", 400, 750, 80, 24) 	visible(txt_anp_value_amber, false)
+
 --groups
 wind_speed_direction = group_add(txt_wind_heading, txt_wind_speed, img_wind_arrow)
 
 cyan_lines = canvas_add(0, 0, 800, 800)
 
-function general_nd (nd_mode, irs_mode, wind_heading, wind_speed, hdg_bug_line, true_airspeed, groundspeed, track_mag_pilot, mcp_hdg_dial, current_heading, map_range) 
+function general_nd (nd_mode, irs_mode, wind_heading, wind_speed, hdg_bug_line, true_airspeed, groundspeed, track_mag_pilot, mcp_hdg_dial, current_heading, map_range, fmc_source, rnp, anp) 
 	
 	visible(img_triangle,					nd_mode ~= 3) --Airplane symbol (W) MAP, MAP CTR,VOR,APP 
 	visible(img_compass_rose_no_text,		nd_mode ~= 3) --Expanded compass (W)
@@ -759,10 +783,33 @@ function general_nd (nd_mode, irs_mode, wind_heading, wind_speed, hdg_bug_line, 
 	visible(txt_trk_hdg,					nd_mode == 2 and irs_mode == 2)
 	visible(txt_gs,							irs_mode == 2)
 	visible(txt_tas,						irs_mode == 2)
+	visible(txt_fmc_source,					irs_mode == 2)
 	visible(txt_hdg_failure_flag,			irs_mode ~= 2)
 	visible(txt_map_failure_flag,			irs_mode ~= 2)
 	visible(hdg_failure_flag_box,			irs_mode ~= 2) -- could use more logic instead of just going away when irs is aligned
 	visible(map_failure_flag_box,			irs_mode ~= 2) -- could use more logic instead of just going away when irs is aligned
+	
+	txt_set(txt_rnp_value, string.format("%.2f", rnp))
+	txt_set(txt_anp_value, string.format("%.2f", anp))
+	txt_set(txt_rnp_value_amber, string.format("%.2f", rnp))
+	txt_set(txt_anp_value_amber, string.format("%.2f", anp))
+	
+	visible(canvas_rnp,						rnp > 0)
+	visible(canvas_anp,						rnp > 0)
+	visible(txt_rnp, 						rnp > 0)
+	visible(txt_anp, 						rnp > 0)
+	visible(txt_rnp_amber, 					rnp > 0 and anp > rnp)
+	visible(txt_anp_amber, 					rnp > 0 and anp > rnp)
+	
+	
+	visible(txt_rnp_value, 					rnp > 0)
+	visible(txt_anp_value, 					rnp > 0)
+	visible(txt_rnp_value_amber, 			rnp > 0 and anp > rnp)
+	visible(txt_anp_value_amber, 			rnp > 0 and anp > rnp)
+	
+	
+	if fmc_source == 1 then txt_set(txt_fmc_source, "FMC L")
+	elseif fmc_source == 2 then txt_set(txt_fmc_source, "FMC R")end
 	
 	txt_set(txt_trk_hdg, string.format("%03d", var_round(track_mag_pilot)))
 	
@@ -816,6 +863,7 @@ function general_nd (nd_mode, irs_mode, wind_heading, wind_speed, hdg_bug_line, 
 	visible(txt_tas_value,					irs_mode == 2)
 	visible(txt_gs_value,					irs_mode == 2)
 	visible(wind_speed_direction,			tas > 101 and irs_mode == 2) --  Blank until TAS is greater than 101 knots. --still need to do : PLAN mode displays speed/direction only.
+	
 end
 xpl_dataref_subscribe("laminar/B738/EFIS_control/capt/map_mode_pos", "INT", --no_mode, 0 app, 1 vor, 2 map, 3 pln
 					  "laminar/B738/irs/irs_mode", "INT",
@@ -828,13 +876,20 @@ xpl_dataref_subscribe("laminar/B738/EFIS_control/capt/map_mode_pos", "INT", --no
 					  "laminar/B738/autopilot/mcp_hdg_dial", "FLOAT",
 					  "sim/cockpit2/gauges/indicators/heading_AHARS_deg_mag_pilot", "FLOAT",
 					  "laminar/B738/EFIS/capt/map_range", "INT",
+					  "laminar/B738/nd/capt/fmc_source", "INT",
+					  "laminar/B738/fms/rnp", "FLOAT",
+					  "laminar/B738/fms/anp", "FLOAT",
 					  general_nd)
 
 function top_right_corner(fpln_nav_id, lnav_dist_next, id_eta)
 
 	txt_set(txt_fpln_nav, fpln_nav_id)
 	txt_set(txt_id_eta, string.format("%.2f", id_eta))
-	txt_set(txt_lnav_dist_next, string.format("%.1f", lnav_dist_next))
+	if lnav_dist_next > 100 then
+		txt_set(txt_lnav_dist_next, var_round(lnav_dist_next))
+	else
+		txt_set(txt_lnav_dist_next, string.format("%.1f", lnav_dist_next))
+	end
 
 	if fpln_nav_id == "" then
 		visible(txt_fpln_nav,false)
@@ -889,8 +944,6 @@ xpl_dataref_subscribe(	"laminar/B738/electric/instrument_brightness", "FLOAT[16]
 --laminar/B738/nd/td_y -- top of descent position
 --laminar/B738/EFIS/green_arc --float
 --laminar/B738/EFIS/green_arc_show
---RNP ANP laminar/B738/fms/rnp laminar/B738/fms/anp
---FMC L and R
 --finish vors
 --finish efis text
 --fix NM if greater 100, no decimal, alignment

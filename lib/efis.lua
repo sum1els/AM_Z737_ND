@@ -1,13 +1,8 @@
 	-- EFIS functions --
 
-
-	
 function lib_efis_functions()
 
-
-
-
-	function vor_adf (vor1_off_pos, vor2_off_pos, vor1_sel_id, vor2_sel_id, vor1_dme, vor2_dme, vor1_show, vor1_sel_x, vor1_sel_y, vor2_show, vor2_sel_x, vor2_sel_y, vor1_line_show, vor1_sel_crs, vor1_sel_bcrs, vor2_line_show, vor2_sel_crs, vor2_sel_bcrs, track_mag_pilot, current_heading, vor1_arrow, irs_mode)
+	function vor_adf (vor1_off_pos, vor2_off_pos, vor1_sel_id, vor2_sel_id, vor1_dme, vor2_dme, vor1_show, vor1_sel_x, vor1_sel_y, vor2_show, vor2_sel_x, vor2_sel_y, vor1_line_show, vor1_sel_crs, vor1_sel_bcrs, vor2_line_show, vor2_sel_crs, vor2_sel_bcrs, track_mag_pilot, current_heading, vor1_arrow, vor2_arrow, irs_mode)
 
 		if vor1_sel_bcrs == "" then 
 			vor1_sel_bcrs = "0"
@@ -51,9 +46,11 @@ function lib_efis_functions()
 			move(txt_vortac_green1, get_x_px(vor1_sel_x, 40.892, 16), get_y_px(vor1_sel_y, 35.414, 35) , nil,nil)
 			visible(img_vortac_green1,true)
 			visible(txt_vortac_green1,true)
+			
 		else
 			visible(img_vortac_green1,false)
 			visible(txt_vortac_green1,false)
+			
 		end
 		
 		if vor2_show == 1 then
@@ -69,21 +66,25 @@ function lib_efis_functions()
 		
 		if vor1_dme > 0 then
 			txt_set(txt_vor_1_id, vor1_sel_id)
-				visible(img_vor1_arrow,true)
-				img_rotate(img_vor1_arrow, track_mag_pilot - track_mag_pilot + vor1_arrow)
-				if vor1_dme < 10 then
-					txt_set(txt_vor_1_dme, "DME "..string.format("0%.1f", vor1_dme))
-				else
-					txt_set(txt_vor_1_dme, "DME "..string.format("%.1f", vor1_dme))
-				end
+			visible(img_vor1_arrow,true)
+			--img_rotate(img_vor1_arrow, track_mag_pilot - track_mag_pilot + vor1_arrow)
+			img_rotate(img_vor1_arrow, vor1_arrow)
+			if vor1_dme < 10 then
+				txt_set(txt_vor_1_dme, "DME "..string.format("0%.1f", vor1_dme))
+			else
+				txt_set(txt_vor_1_dme, "DME "..string.format("%.1f", vor1_dme))
+			end
 		else
 			txt_set(txt_vor_1_id, "----")
 			txt_set(txt_vor_1_dme, "DME ---")
-			visible(img_vor1_arrow,false)
+			visible(img_vor1_arrow,true)
 		end
+		
 		
 		if vor2_dme > 0 then
 			txt_set(txt_vor_2_id, vor2_sel_id)
+			visible(img_vor2_arrow,true)
+			img_rotate(img_vor2_arrow, vor2_arrow)
 			if vor2_dme < 10 then
 				txt_set(txt_vor_2_dme, "DME "..string.format("0%.1f", vor2_dme))
 			else
@@ -92,6 +93,7 @@ function lib_efis_functions()
 		else
 			txt_set(txt_vor_2_id, "----")
 			txt_set(txt_vor_2_dme, "DME ---")
+			visible(img_vor2_arrow,false)
 		end
 
 		visible(txt_vor_1,		vor1_off_pos == 1 and irs_mode == 2)
@@ -102,6 +104,7 @@ function lib_efis_functions()
 		visible(txt_vor_2,		vor2_off_pos == 1 and irs_mode == 2)
 		visible(txt_adf_1,		vor1_off_pos == -1 and irs_mode == 2)
 		visible(txt_adf_2,		vor2_off_pos == -1 and irs_mode == 2)
+	
 
 	end
 	xpl_dataref_subscribe(	"laminar/B738/EFIS_control/capt/vor1_off_pos", "INT",
@@ -125,6 +128,7 @@ function lib_efis_functions()
 							"sim/cockpit2/gauges/indicators/ground_track_mag_pilot", "FLOAT",
 							"sim/cockpit2/gauges/indicators/heading_AHARS_deg_mag_pilot", "FLOAT",
 							"laminar/B738/pfd/vor1_arrow", "FLOAT",
+							"laminar/B738/pfd/vor2_arrow", "FLOAT",
 							"laminar/B738/irs/irs_mode", "INT",
 							vor_adf)
 				
@@ -196,9 +200,10 @@ function lib_efis_functions()
 						  "laminar/B738/nd/apt_id28", "STRING",
 						  "laminar/B738/nd/apt_id29", "STRING", airports)
 						  
-	--[[ function sta (EFIS_vor_on, obj_x, obj_y, object_id0,object_id1,object_id2,object_id3,object_id4,object_id5,object_id6,object_id7,object_id8,object_id9,object_id10,object_id11,object_id12,object_id13,object_id14,object_id15,object_id16,object_id17,object_id18,object_id19,object_id20,object_id21,object_id22,object_id23,object_id24,object_id25,object_id26,object_id27,object_id28,object_id29,object_id30,object_id31,object_id32,object_id33,object_id34,object_id35,object_id36,object_id37,object_id38,object_id39,object_id40,object_id41,object_id42,object_id43,object_id44,object_id45,object_id46,object_id47,object_id48,object_id49,object_type0,object_type1,object_type2,object_type3,object_type4,object_type5,object_type6,object_type7,object_type8,object_type9,object_type10,object_type11,object_type12,object_type13,object_type14,object_type15,object_type16,object_type17,object_type18,object_type19,object_type20,object_type21,object_type22,object_type23,object_type24,object_type25,object_type26,object_type27,object_type28,object_type29,object_type30,object_type31,object_type32,object_type33,object_type34,object_type35,object_type36,object_type37,object_type38,object_type39,object_type40,object_type41,object_type42,object_type43,object_type44,object_type45,object_type46,object_type47,object_type48,object_type49) --]]
+--[[ 	function sta (EFIS_vor_on, obj_x, obj_y, object_id0,object_id1,object_id2,object_id3,object_id4,object_id5,object_id6,object_id7,object_id8,object_id9,object_id10,object_id11,object_id12,object_id13,object_id14,object_id15,object_id16,object_id17,object_id18,object_id19,object_id20,object_id21,object_id22,object_id23,object_id24,object_id25,object_id26,object_id27,object_id28,object_id29,object_id30,object_id31,object_id32,object_id33,object_id34,object_id35,object_id36,object_id37,object_id38,object_id39,object_id40,object_id41,object_id42,object_id43,object_id44,object_id45,object_id46,object_id47,object_id48,object_id49,object_type0,object_type1,object_type2,object_type3,object_type4,object_type5,object_type6,object_type7,object_type8,object_type9,object_type10,object_type11,object_type12,object_type13,object_type14,object_type15,object_type16,object_type17,object_type18,object_type19,object_type20,object_type21,object_type22,object_type23,object_type24,object_type25,object_type26,object_type27,object_type28,object_type29,object_type30,object_type31,object_type32,object_type33,object_type34,object_type35,object_type36,object_type37,object_type38,object_type39,object_type40,object_type41,object_type42,object_type43,object_type44,object_type45,object_type46,object_type47,object_type48,object_type49) --]]
+
 	
-	function sta (EFIS_vor_on, obj_x, obj_y, object_id0,object_id1,object_id2,object_id3,object_id4,object_id5,object_id6,object_id7,object_id8,object_id9,object_id10,object_id11,object_id12,object_id13,object_id14,object_id15,object_id16,object_id17,object_id18,object_id19,object_id20,object_id21,object_id22,object_id23,object_id24,object_id25,object_id26,object_id27,object_id28,object_id29,object_id30,object_id31,object_id32,object_id33,object_id34,object_id35,object_id36,object_id37,object_id38,object_id39,object_id40,object_id41,object_id42,object_id43,object_id44,object_id45,object_id46,object_id47,object_id48,object_id49)
+	function sta (EFIS_vor_on, obj_x, obj_y, object_id0,object_id1,object_id2,object_id3,object_id4,object_id5,object_id6,object_id7,object_id8,object_id9,object_id10,object_id11,object_id12,object_id13,object_id14,object_id15,object_id16,object_id17,object_id18,object_id19,object_id20,object_id21,object_id22,object_id23,object_id24,object_id25,object_id26,object_id27,object_id28,object_id29,object_id30,object_id31,object_id32,object_id33,object_id34,object_id35,object_id36,object_id37,object_id38,object_id39,object_id40,object_id41,object_id42,object_id43,object_id44,object_id45,object_id46,object_id47,object_id48,object_id49, mylat, mylon, map_range, current_heading)
 
 		local sta_txt = {txt_sta0, txt_sta1, txt_sta2, txt_sta3, txt_sta4, txt_sta5, txt_sta6, txt_sta7, txt_sta8, txt_sta9, txt_sta10, txt_sta11, txt_sta12, txt_sta13, txt_sta14, txt_sta15, txt_sta16, txt_sta17, txt_sta18, txt_sta19, txt_sta20, txt_sta21, txt_sta22, txt_sta23, txt_sta24, txt_sta25, txt_sta26, txt_sta27, txt_sta28, txt_sta29, txt_sta30, txt_sta31, txt_sta32, txt_sta33, txt_sta34, txt_sta35, txt_sta36, txt_sta37, txt_sta38, txt_sta39, txt_sta40, txt_sta41, txt_sta42, txt_sta43, txt_sta44, txt_sta45, txt_sta46, txt_sta47, txt_sta48, txt_sta49}	
 		
@@ -241,8 +246,8 @@ function lib_efis_functions()
 
 	end
 	xpl_dataref_subscribe(	"laminar/B738/EFIS/EFIS_vor_on", "INT",
-							"laminar/B738/nd/object_x", "FLOAT[50]",						
-							"laminar/B738/nd/object_y", "FLOAT[50]",	
+							"laminar/B738/nd/object_x", "FLOAT[50]",
+							"laminar/B738/nd/object_y", "FLOAT[50]",
 							"laminar/B738/nd/object_id00", "STRING",
 							"laminar/B738/nd/object_id01", "STRING",
 							"laminar/B738/nd/object_id02", "STRING",
@@ -292,7 +297,13 @@ function lib_efis_functions()
 							"laminar/B738/nd/object_id46", "STRING",
 							"laminar/B738/nd/object_id47", "STRING",
 							"laminar/B738/nd/object_id48", "STRING",
-							"laminar/B738/nd/object_id49", "STRING", sta)
+							"laminar/B738/nd/object_id49", "STRING",
+							"sim/flightmodel/position/latitude", "FLOAT",
+							"sim/flightmodel/position/longitude", "FLOAT",
+							"laminar/B738/EFIS/capt/map_range", "INT",
+							"sim/cockpit2/gauges/indicators/heading_AHARS_deg_mag_pilot", "FLOAT",
+							sta)
+
 						--[[ 	"laminar/B738/nd/object_type00", "INT",
 							"laminar/B738/nd/object_type01", "INT",
 							"laminar/B738/nd/object_type02", "INT",
@@ -354,7 +365,7 @@ function lib_efis_functions()
 
 	end
 	xpl_dataref_subscribe(	"laminar/B738/EFIS/EFIS_fix_on", "INT",
-							"laminar/B738/nd/object_x", "FLOAT[50]",						
+							"laminar/B738/nd/object_x", "FLOAT[50]",
 							"laminar/B738/nd/object_y", "FLOAT[50]",
 							"laminar/B738/nd/object_id00w", "STRING",	
 							"laminar/B738/nd/object_id01w", "STRING",	
